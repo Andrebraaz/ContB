@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar e-mail</title>
+    <script>
+        // Função para redirecionar para outra página após um período de tempo
+        function redirecionar() {
+            window.location.href = "https:www.contbraz.com.br";
+        }
+    </script>
+</head>
+<body>
+    <p>Clique no link abaixo para enviar um e-mail:</p>
+    <a href="mailto:sac@contbraz.com.br" onclick="redirecionar()">Enviar e-mail</a>
+    <p>Se o cliente de e-mail não abrir, <a href="https:www.contbraz.com.br">clique aqui</a> para ser redirecionado.</p>
+</body>
+</html>
