@@ -7,5 +7,11 @@
 </head>
 <body>
     <p>Aguarde enquanto conectamos sua chamada...</p>
+    <script>
+        // Redirecionar para outro site após 10 segundos
+        setTimeout(function(){
+            window.location.href = "https://www.contbraz.com.br";
+        }, 10000); // 10 segundos em milissegundos
+    </script>
 </body>
 </html>
