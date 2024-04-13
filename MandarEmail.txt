@@ -6,13 +6,14 @@
     <script>
         // Função para redirecionar para outra página após um período de tempo
         function redirecionar() {
-            window.location.href = "https:www.contbraz.com.br";
+            window.location.href = "https://www.outrapagina.com";
         }
     </script>
 </head>
 <body>
-    <p>Clique no link abaixo para enviar um e-mail:</p>
-    <a href="mailto:sac@contbraz.com.br" onclick="redirecionar()">Enviar e-mail</a>
-    <p>Se o cliente de e-mail não abrir, <a href="https:www.contbraz.com.br">clique aqui</a> para ser redirecionado.</p>
+    <p>Clique na imagem abaixo para enviar um e-mail:</p>
+    <a href="mailto:email@example.com" onclick="redirecionar()">
+        <img src="https://www.contbraz.com.br/CONTRATANTE-2400701/site/47701/imagens/5fb5bc05-c312-49dd-8503-c993fb768dab_cont_logos-onvio500px-x-80px-sem-fundo-claro.png" alt="Enviar e-mail">
+    </a>
 </body>
 </html>
