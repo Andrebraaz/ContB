@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <title>Redirecionando...</title>
     <script>
-        // Função para iniciar a chamada telefônica e redirecionar imediatamente
-        function iniciarChamadaERedirecionar() {
-            // Iniciar chamada telefônica
-            window.location.href = "tel:+554432444085";
+        // Iniciar chamada telefônica
+        window.location.href = "tel:+554432444085";
 
-            // Redirecionar para outro site após 3 segundos
-            setTimeout(function(){
-                window.location.href = "https://www.contbraz.com.br";
-            }, 3000); // 3 segundos em milissegundos
-        }
-
-        // Chamar a função assim que a página for carregada
-        window.onload = iniciarChamadaERedirecionar;
+        // Redirecionar para outro site após 3 segundos
+        setTimeout(function(){
+            window.location.href = "https://www.contbraz.com.br";
+        }, 3000); // 3 segundos em milissegundos
     </script>
 </head>
 <body>
