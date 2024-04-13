@@ -2,19 +2,16 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=tel:+554432444085">
     <title>Redirecionando...</title>
-    <script>
-        // Iniciar chamada telefônica
-        window.location.href = "tel:+554432444085";
-
-        // Redirecionar para outro site após 3 segundos
-        setTimeout(function(){
-            window.location.href = "https://www.contbraz.com.br";
-        }, 3000); // 3 segundos em milissegundos
-    </script>
 </head>
 <body>
     <p>Aguarde enquanto conectamos sua chamada...</p>
-    <p>Se você não for redirecionado em alguns segundos, <a href="tel:+554432444085">clique aqui</a>.</p>
+    <script>
+        // Redirecionar para outro site após 10 segundos
+        setTimeout(function(){
+            window.location.href = "https://www.contbraz.com.br";
+        }, 10); // 10 segundos em milissegundos
+    </script>
 </body>
 </html>
