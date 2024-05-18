@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora INSS de Obras SERO - Pessoa Física</title>
+    <style>
+        tr:hover {
+            background-color: #D6EEEE;
+        }
+
+        .container {
+            width: 794px; /* largura aproximada do papel A4 em pixels */
+            margin: 0 auto; /* Isso centraliza a div horizontalmente */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0px; /* Reduz o espaçamento interno das células */
+            line-height: 1; /* Reduz o espaçamento entre as linhas */
+        }
+
+        p, h2 {
+            margin: 3px; /* Remove a margem dos parágrafos e cabeçalhos */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <table style="width: 100%; border-collapse: collapse; float: left;" border="0">
+        <tbody>
+            <tr>
+                <td style="width: 47.5882%; text-align: center;">
+                    <h2><iframe src="https://www.contbraz.com.br/CONTRATANTE-2400701/site/47701/imagens/5fb5bc05-c312-49dd-8503-c993fb768dab_cont_logos-onvio500px-x-80px-sem-fundo-claro.png" width="280" height="80" frameborder="0" scrolling="no"></iframe></h2>
+                </td>
+                <td style="width: 51.4118%; text-align: center;">
+                    CONTBRAZ CONTABILIDADE<br />
+                    Departamento Tributário<br />
+                    Avenida Curitiba 75, Paiçandu, Paraná - 87.140-000<br />
+                    Sac@contbraz.com.br - (44)3244-4085<br /><br />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <h2 style="text-align: center;">PROPOSTA DE SERVIÇOS DE IMPOSTO DE RENDA</h2>
+
+    <table>
+        <!-- Aqui você coloca o conteúdo da sua tabela -->
+    </table>
+
+<table>
+<tbody>
+
+<tr>
+<td colspan="13" width="697" >
+<p><strong>Á, 
+
+
+
+
+<input type="text" id="nome" name="nome" class="no-border" style="border: none; background-color: #f2f2f2; width: 80%; color: black; font-family: inherit; font-weight: bold;" onfocus="this.style.outline='none';" onblur="this.style.border='none';" onkeyup="this.value = this.value.toUpperCase();">
+
+
+</strong></p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>Introdução:</strong></p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p>Nossa empresa tem o prazer de oferecer servi&ccedil;os abrangentes de prepara&ccedil;&atilde;o do Imposto de Renda para o ano fiscal de 2024. Com uma equipe experiente e dedicada, estamos comprometidos em garantir que nossos clientes cumpram suas obriga&ccedil;&otilde;es fiscais de maneira precisa e eficiente.</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>Descrição dos Serviços Oferecidos:</strong></p>
+</td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 1190.19px; height: 82px;" colspan="13">
+<ul>
+<li>Prepara&ccedil;&atilde;o de declara&ccedil;&otilde;es de Imposto de Renda para pessoas f&iacute;sicas.</li>
+<li>An&aacute;lise e otimiza&ccedil;&atilde;o de dedu&ccedil;&otilde;es e cr&eacute;ditos fiscais.</li>
+<li>Orienta&ccedil;&atilde;o sobre documenta&ccedil;&atilde;o necess&aacute;ria para a declara&ccedil;&atilde;o.</li>
+</ul>
+</td>
+</tr>
+
+ </table>
+
+<td colspan="13" width="697">
+<p><strong>Estrutura de Pre&ccedil;os:</strong></p>
+</td>
+</tr>
+
+  <hr>
+
+<table border="0">
+
+<td width="123"><p>Ano declaração:</p></td>
+
+<td width="60" style="text-align: right"><p>2024/2023</p></td>
+
+
+<td width="30"><input type="checkbox" id="exampleCheckbox1" name="exampleCheckbox1" value="value1"></td>
+
+<td width="60" style="text-align: right"><p>2023/2022</p></td>
+
+
+<td width="30"><input type="checkbox" id="exampleCheckbox2" name="exampleCheckbox2" value="value2"></td>
+
+
+<td width="60" style="text-align: right"><p>2022/2021</p></td>
+
+
+<td width="30"><input type="checkbox" id="exampleCheckbox3" name="exampleCheckbox3" value="value3"></td>
+
+
+<td width="60" style="text-align: right"><p>2021/2020</p></td>
+
+
+<td width="30"><input type="checkbox" id="exampleCheckbox4" name="exampleCheckbox4" value="value4"></td>
+
+
+<td width="60" style="text-align: right"><p>2020/2019</p></td>
+
+<td width="30"><input type="checkbox" id="exampleCheckbox5" name="exampleCheckbox5" value="value5"></td>
+
+<td id="quantidade_declaracao"></td>
+
+
+
+
+  </table>
+<table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>Lançamentos</strong></p>
+</td>
+<tr>
+<td colspan="4" width="264">
+<p>Quantidade Bens moveis e imóveis</p>
+</td>
+
+
+
+
+                <td colspan="4" width="200"><input type="number" id="quantidade_bens_ativos" min="0" value="0" onchange="calcularPreco()" required></td>
+         
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>Rendimentos</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Valor Total Tribut&aacute;vel</p>
+</td>
+
+
+
+
+
+                <td colspan="4" width="200"><input type="number" id="quantidade_tributavel" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+
+
+
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Valor Total Exclusivo</p>
+</td>
+<td colspan="4" width="200"><input type="number" id="quantidade_exclusivo" min="0" value="0" onchange="calcularPreco()" required></td>
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Valor Total Isento</p>
+</td>
+<td colspan="4" width="200">
+                <input type="number" id="quantidade_isento" min="0" value="0" onchange="calcularPreco()" required></td>
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Valor Total RRA</p>
+</td>
+<td colspan="4" width="200"><input type="number" id="quantidade_rra" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>Anexos IRPF</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>GCAP</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Bens imóveis</p>
+</td>
+
+
+ 
+
+
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+
+                <td><input type="number" id="quantidade_ganho" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Direitos/ Bens moveis</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Participa&ccedil;&otilde;es societ&aacute;rias</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Moedas em esp&eacute;cie</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>RURAL</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="964">
+<p>-Com apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
+</td>
+<td colspan="4" width="200"><input type="number" id="quantidade_rural" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Sem apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>A&Ccedil;&Otilde;ES/ VARI&Aacute;VEL</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Com Calculadora de apura&ccedil;&atilde;o mensal</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Sem Calculadora de apura&ccedil;&atilde;o mensal</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+
+                <td><input type="number" id="quantidade_variavel" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Quantidade de a&ccedil;&otilde;es</p>
+</td>
+<td colspan="4" width="200">
+<p>(Quantidade)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+
+<tr>
+<td colspan="4" width="697">
+<p><strong>SIMULACAO 2024</strong></p>
+</td>
+</tr>
+
+  <hr>
+
+<tr>
+<td colspan="4" width="697">
+<p><strong>Tabela IRPF 2024</strong></p>
+</td>
+</tr>
+
+
+<table style="height: 80px; width: 100%; border-collapse: collapse; float: left;" border="1">
+
+<tbody>
+
+<tr>
+<td colspan="2" width="283">
+<p><strong>Base de C&aacute;lculo (R$)</strong></p>
+</td>
+<td width="181">
+<p><strong>Al&iacute;quota (%)</strong></p>
+</td>
+<td width="232">
+<p><strong>Dedu&ccedil;&atilde;o do IR (R$)</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="283">
+<p>De R$ 24.511,93 at&eacute; R$ 33.919,80</p>
+</td>
+<td width="181">
+<p>7,5%</p>
+</td>
+<td width="232">
+<p>R$ 1.838,39</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="283">
+<p>De R$ 33.919,81 at&eacute; R$ 45.012,60</p>
+</td>
+<td width="181">
+<p>15,0%&nbsp;</p>
+</td>
+<td width="232">
+<p>R$ 4.382,38</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="283">
+<p>De R$ 45.012,61 at&eacute; R$ 55.976,16</p>
+</td>
+<td width="181">
+<p>22,5%&nbsp;</p>
+</td>
+<td width="232">
+<p>R$ 7.758,32</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="283">
+<p>Acima de R$ 55.976,16</p>
+</td>
+<td width="181">
+<p>27,5%</p>
+</td>
+<td width="232">
+<p>R$ 10.557,13</p>
+</td>
+</tr>
+
+</table>
+
+<table>
+
+
+<tr>
+<td colspan="4" width="697">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Valores Simula&ccedil;&atilde;o</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor Previd&ecirc;ncia Oficial:</p>
+</td>
+
+
+
+
+
+
+<td colspan="2" width="210"><input type="number" id="valorPrevidenciaOficial" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor Previd&ecirc;ncia FAPI:</p>
+</td>
+
+
+<td colspan="2" width="210"><input type="number" id="valorPrevidenciaFAPI" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Imposto Retido:</p>
+</td>
+
+
+<td colspan="2" width="210"><input type="number" id="impostoRetido" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Despesas Médicas</p>
+</td>
+
+
+<td colspan="2" width="210"><input type="number" id="despesasMedicas" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Despesas Instrução (até R$ 3.561,5):</p>
+</td>
+
+
+
+<td colspan="2" width="210"><input type="number" id="despesasInstrucao" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Quantidade Dependentes:</p>
+</td>
+
+
+
+
+
+
+
+
+
+
+
+<td colspan="2" width="210"><input type="number" id="quantidade_dependentes" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+
+
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>SIMULA&Ccedil;&Atilde;O</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td colspan="2" width="210">
+<p>M&eacute;todo COMPLETO</p>
+</td>
+<td width="232">
+<p>M&eacute;todo SIMPLIFICADO</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Base de Cálculo:</p>
+</td>
+
+
+
+<td colspan="2" width="210" id="baseDeCalculoCompleto0">-</td>
+<td colspan="2" width="210" id="baseDeCalculoSimplificado0">-</td>
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td width="255">
+<p>Imposto a Pagar:</p>
+</td>
+
+
+<td colspan="2" width="210" id="impostoAPagarCompleto0">-</td>
+<td colspan="2" width="210" id="impostoAPagarSimplificado0">-</td>
+
+
+
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor Dedutível:</p>
+</td>
+
+
+<td colspan="2" width="210" id="valorDedutivelCompleto0">-</td>
+<td colspan="2" width="210" id="valorDedutivelSimplificado0">-</td>
+
+
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor Final:</p>
+</td>
+
+
+<td colspan="2" width="210" id="valorFinalCompleto0">-</td>
+<td colspan="2" width="210" id="valorFinalSimplificado0">-</td>
+
+
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Alíquota:</p>
+</td>
+
+<td colspan="2" width="210" id="aliquotaCompleto0">-</td>
+<td colspan="2" width="210" id="aliquotaSimplificado0">-</td>
+
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Dedut&iacute;vel para Igualar Simplificado:</p>
+</td>
+
+<td colspan="3" width="442" id="dedutiveParaIgualarSimplificado">-</td>
+
+
+
+
+
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor M&aacute;ximo de FAPI:</p>
+</td>
+
+<td colspan="3" width="442" id="valorMaximoFAPI">-</td>
+
+
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p><strong>PRECIFICAÇÃO</strong></p>
+</td>
+</tr>
+
+
+<hr>
+
+
+<table>
+
+
+<tr>
+<td colspan="4" width="697">
+<p><strong>ACR&Eacute;SCIMOS</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Atendimento em Malha Cliente (minutos)</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Atendimento em Malha Eventual (minutos)</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Em atraso</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Primeira Declara&ccedil;&atilde;o (acima 5 bens)</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Outros</p>
+</td>
+
+
+
+<td colspan="2" width="210">
+
+                <input type="number" id="quantidade_outros" min="0" value="0" onchange="calcularPreco()" required></td>
+
+
+
+
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p><strong>DEDU&Ccedil;&Otilde;ES</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Quantidade de Bens maior que 10</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Declaracao do conjuge (rural)</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Varias em atraso</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Antecipada (Realizado at&eacute; 30/04/2024)</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Desconto funcion&aacute;rio de parceiros (10%)</p>
+</td>
+<td colspan="2" width="210">
+<p>(Valor total)</p>
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<tr>
+<td colspan="4" width="697">
+<p><strong>PROPOSTA DE VALOR PARA SERVIÇOS</strong></p>
+</td>
+</tr>
+  <hr>
+<table>
+
+
+<tr>
+<td width="255">
+<p><strong>Dura&ccedil;&atilde;o Estimada:</strong></p>
+</td>
+<td colspan="2" width="210">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Horas planejadas:</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Horas extras</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p><strong>A partir dia 14 maio</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p><strong>Impostos e Taxas</strong></p>
+</td>
+<td colspan="2" width="210">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Valor Estimado dos Impostos</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p><strong>Avalia&ccedil;&atilde;o de Riscos</strong></p>
+</td>
+<td colspan="2" width="210">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Riscos Operacionais</p>
+</td>
+<td colspan="2" width="210">
+<p>[Valor total]</p>
+</td>
+<td width="232">
+<p><strong>&nbsp;</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p><strong>VALOR FINAL DO SERVIÇO</strong></p>
+</td>
+
+
+
+<td colspan="3" width="442"
+
+
+               id="preco_total">-</td>
+
+
+
+
+
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p><strong>Condi&ccedil;&otilde;es de Pagamento:</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p>O pagamento integral &eacute; devido no momento da presta&ccedil;&atilde;o dos servi&ccedil;os, podendo ser realizado atrav&eacute;s de transfer&ecirc;ncia banc&aacute;ria, PIX, ou cart&atilde;o de cr&eacute;dito.</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p>Chave Pix: CNPJ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<p><strong>Termos e Condi&ccedil;&otilde;es:</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<ul>
+<li>A proposta tem validade de 2 dias, todos os pagamentos s&atilde;o n&atilde;o reembols&aacute;veis.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="697">
+<ul>
+<li>O cliente &eacute; respons&aacute;vel por fornecer todas as informa&ccedil;&otilde;es e documentos necess&aacute;rios para a prepara&ccedil;&atilde;o precisa da declara&ccedil;&atilde;o de Imposto de Renda.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="156">&nbsp;</td>
+<td width="13">&nbsp;</td>
+<td width="125">&nbsp;</td>
+<td width="157">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<table>
+<tbody>
+<tr>
+<td width="697">
+<p><strong>Informa&ccedil;&otilde;es de Contato:</strong></p>
+</td>
+</tr>
+<tr>
+<td width="697">
+<p>Para agendar uma consulta ou obter mais informa&ccedil;&otilde;es sobre nossos servi&ccedil;os, entre em contato conosco pelo e-mail contato@exemplo.com ou pelo telefone (XX) XXXX-XXXX.</p>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function calcularImpostos() {
+
+
+
+            var rendimentosTributaveis = parseFloat(document.getElementById('quantidade_tributavel').value);
+					
+
+
+
+
+
+            var valorPrevidenciaOficial = parseFloat(document.getElementById('valorPrevidenciaOficial').value);
+            var valorPrevidenciaFAPI = parseFloat(document.getElementById('valorPrevidenciaFAPI').value) <= rendimentosTributaveis * 0.12 ? parseFloat(document.getElementById('valorPrevidenciaFAPI').value) : rendimentosTributaveis * 0.12;
+            var impostoRetido = parseFloat(document.getElementById('impostoRetido').value);
+            var despesasMedicas = parseFloat(document.getElementById('despesasMedicas').value);
+            var despesasInstrucao = parseFloat(document.getElementById('despesasInstrucao').value) <= 3561.5 ? parseFloat(document.getElementById('despesasInstrucao').value) : 3561.5;
+            var quantidadeDependentes = parseFloat(document.getElementById('quantidade_dependentes').value);
+
+            // Cálculos para o método COMPLETO
+            var baseDeCalculoCompleto = rendimentosTributaveis - valorPrevidenciaOficial - valorPrevidenciaFAPI - despesasMedicas - despesasInstrucao - (quantidadeDependentes * 2275.08);
+            var impostoAPagarCompleto = calcularImposto(baseDeCalculoCompleto);
+            var valorDedutivelCompleto = despesasMedicas + (quantidadeDependentes * 2275.08) + despesasInstrucao;
+            var valorFinalCompleto = impostoAPagarCompleto - impostoRetido;
+            var aliquotaCompleto = (impostoAPagarCompleto * 100) / rendimentosTributaveis;
+
+            // Cálculos para o método SIMPLIFICADO
+            var baseDeCalculoSimplificado = rendimentosTributaveis <= (16754.34 / 0.2) ? rendimentosTributaveis - (rendimentosTributaveis * 0.2) : rendimentosTributaveis - 16754.34;
+            var impostoAPagarSimplificado = calcularImposto(baseDeCalculoSimplificado);
+            var valorDedutivelSimplificado = rendimentosTributaveis <= (16754.34 / 0.2) ? rendimentosTributaveis * 0.2 : 16754.34;
+            var valorFinalSimplificado = impostoAPagarSimplificado - impostoRetido;
+            var aliquotaSimplificado = (impostoAPagarSimplificado * 100) / rendimentosTributaveis;
+
+            // Cálculo do valor dedutível para igualar o simplificado
+            var dedutiveParaIgualarSimplificado = baseDeCalculoCompleto - baseDeCalculoSimplificado;
+
+            // Cálculo do valor máximo de FAPI
+            var valorMaximoFAPI = rendimentosTributaveis * 0.12;
+
+            // Função auxiliar para calcular o imposto com base na base de cálculo
+            function calcularImposto(baseDeCalculo) {
+                if (baseDeCalculo <= 24511.92) {
+                    return 0;
+                } else if (baseDeCalculo <= 33919.8) {
+                    return (baseDeCalculo * 0.075) - 1838.39;
+                } else if (baseDeCalculo <= 45012.6) {
+                    return (baseDeCalculo * 0.15) - 4382.38;
+                } else if (baseDeCalculo <= 55976.16) {
+                    return (baseDeCalculo * 0.225) - 7758.32;
+                } else {
+                    return (baseDeCalculo * 0.275) - 10557.13;
+                }
+            }
+
+
+
+
+
+document.getElementById('baseDeCalculoSimplificado0').innerHTML = baseDeCalculoSimplificado.toFixed(2);
+document.getElementById('baseDeCalculoCompleto0').innerHTML = baseDeCalculoCompleto.toFixed(2);
+
+document.getElementById('impostoAPagarSimplificado0').innerHTML = impostoAPagarSimplificado.toFixed(2);
+document.getElementById('impostoAPagarCompleto0').innerHTML = impostoAPagarCompleto.toFixed(2);
+
+document.getElementById('valorDedutivelSimplificado0').innerHTML = valorDedutivelSimplificado.toFixed(2);
+document.getElementById('valorDedutivelCompleto0').innerHTML = valorDedutivelCompleto.toFixed(2);
+
+document.getElementById('valorFinalSimplificado0').innerHTML = valorFinalSimplificado.toFixed(2);
+document.getElementById('valorFinalCompleto0').innerHTML = valorFinalCompleto.toFixed(2);
+
+document.getElementById('aliquotaSimplificado0').innerHTML = aliquotaSimplificado.toFixed(2);
+document.getElementById('aliquotaCompleto0').innerHTML = aliquotaCompleto.toFixed(2);
+
+document.getElementById('dedutiveParaIgualarSimplificado').innerHTML = dedutiveParaIgualarSimplificado.toFixed(2);
+document.getElementById('valorMaximoFAPI').innerHTML = valorMaximoFAPI.toFixed(2);
+
+
+
+
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', calcularImpostos);
+            });
+            calcularImpostos(); // Initial calculation
+        });
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+
+    <p id="dedutiveParaIgualarSimplificado"></p>
+    <p id="valorMaximoFAPI"></p>
+</body>
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<script>
+    function calcularPreco() {
+        var quantidade_declaracao = parseFloat(document.getElementById('quantidade_declaracao').value);
+        var quantidade_dependentes = parseFloat(document.getElementById('quantidade_dependentes').value);
+        var quantidade_bens_ativos = parseFloat(document.getElementById('quantidade_bens_ativos').value);
+        var quantidade_tributavel = parseFloat(document.getElementById('quantidade_tributavel').value);
+        var quantidade_exclusivo = parseFloat(document.getElementById('quantidade_exclusivo').value);
+        var quantidade_isento = parseFloat(document.getElementById('quantidade_isento').value);
+        var quantidade_rra = parseFloat(document.getElementById('quantidade_rra').value);
+        var quantidade_rural = parseFloat(document.getElementById('quantidade_rural').value);
+        var quantidade_ganho = parseFloat(document.getElementById('quantidade_ganho').value);
+        var quantidade_variavel = parseFloat(document.getElementById('quantidade_variavel').value);
+        var quantidade_outros = parseFloat(document.getElementById('quantidade_outros').value);
+
+        var preco_declaracao = quantidade_declaracao * 169;
+        var preco_dependentes = quantidade_dependentes * 5;
+        var preco_bens_ativos = quantidade_bens_ativos * 6;
+        var preco_tributavel = quantidade_tributavel * 0.001;
+        var preco_exclusivo = quantidade_exclusivo * 0.001;
+        var preco_isento = quantidade_isento * 0.001;
+        var preco_rra = quantidade_rra * 0.003;
+        var preco_rural = quantidade_rural * 0.001;
+        var preco_ganho = quantidade_ganho * 0.001;
+        var preco_variavel = quantidade_variavel * 0.001;
+        var preco_outros = quantidade_outros;
+
+        var preco_total = preco_declaracao + preco_dependentes + preco_bens_ativos + preco_tributavel + preco_exclusivo + preco_isento + preco_rra + preco_rural + preco_ganho + preco_variavel + preco_outros;
+
+        document.getElementById('preco_total').innerText = 'R$ ' + preco_total.toFixed(2);
+    }
+</script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const quantidadeDeclaracao = document.getElementById('quantidade_declaracao');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    updateQuantidadeDeclaracao();
+                });
+            });
+
+            function updateQuantidadeDeclaracao() {
+                let count = 0;
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        count++;
+                    }
+                });
+                quantidadeDeclaracao.value = count;
+
+calcularImpostos()
+calcularPreco()
+
+            }
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>
+
+       
