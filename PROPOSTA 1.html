@@ -123,29 +123,6 @@
             color: #999;
         }
 
-.inputs input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-    -moz-appearance: textfield; /* Para Firefox */
-}
-
-.inputs input[type="number"]::placeholder {
-    color: #aaa;
-}
-
-.inputs input[type="number"]:focus {
-    outline: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
         @media (min-width: 768px) {
             .container {
                 padding: 1.5cm;
@@ -204,7 +181,7 @@
 <body>
 
 <div class="container">
-    <table style="width: 100%; border-collapse: collapse; float: left;" border="1">
+    <table style="width: 100%; border-collapse: collapse; float: left;" border="0">
         <tbody>
             <tr>
                 <td style="width: 47.5882%; text-align: center;">
@@ -221,10 +198,11 @@ Paraná - 87.140-000<br />
     </table>
     <hr />
 
+                <div class="inputs">
 
 
     <h2 style="text-align: center;">PROPOSTA DE SERVIÇOS DE IMPOSTO DE RENDA</h2>
-             
+                </div>
 
 
 
@@ -238,7 +216,7 @@ Paraná - 87.140-000<br />
 
 
 
-<table border="1">
+<table>
 <tbody>
 
 <tr>
@@ -295,7 +273,7 @@ Paraná - 87.140-000<br />
 
 
 
-<table border="1">
+<table border="0">
 
 <td width="123"><p>Ano declaração:</p></td>
 
@@ -332,7 +310,11 @@ Paraná - 87.140-000<br />
 
 
   </table>
-<table border="1">
+<table>
+
+
+
+
 
 
 
@@ -345,161 +327,103 @@ Paraná - 87.140-000<br />
 
 </tr>
 <tr>
-<td colspan="14" width="697">
+<td colspan="13" width="697">
 <p><strong>Lançamentos</strong></p>
 </td>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Quantidade Bens moveis e imóveis</p>
 </td>
-
-
-<td colspan="7" width="50">
+<td>
 <div class="inputs">
-    <input type="number" id="quantidade_bens_ativos" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+    <input type="text" id="cliente" placeholder="Nome do Cliente" style="height: 8px;">
 </div>
 
 </td>
 
+<div class="inputs">
+
+                <td colspan="4" width="200"><input type="number" id="quantidade_bens_ativos" min="0" value="0" onchange="calcularPreco()" required></td>
+         
+</div>
 
 
 
-
-
-
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
-<td colspan="14" width="697">
+<td colspan="13" width="697">
 <p><strong>Rendimentos</strong></p>
 </td>
 </tr>
-
-
-
-
-
-
-
 <tr>
-<td colspan="7" width="350">
-<p>Valor Total Tributável</p>
+<td colspan="4" width="264">
+<p>Valor Total Tribut&aacute;vel</p>
 </td>
 
 
 
 
 
+                <td colspan="4" width="200"><input type="number" id="quantidade_tributavel" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_tributavel" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
 
+
+
+
+
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
-
-
-
-
-
-
-
-
-
-
-
-
 </tr>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Valor Total Exclusivo</p>
 </td>
+<td colspan="4" width="200"><input type="number" id="quantidade_exclusivo" min="0" value="0" onchange="calcularPreco()" required></td>
 
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_exclusivo" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</tr>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Valor Total Isento</p>
 </td>
+<td colspan="4" width="200">
+                <input type="number" id="quantidade_isento" min="0" value="0" onchange="calcularPreco()" required></td>
 
-
-
-
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_isento" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</tr>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Valor Total RRA</p>
 </td>
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_rra" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="4" width="200"><input type="number" id="quantidade_rra" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
-
-
-
-
-
-
-
-
+</tr>
 <tr>
-<td colspan="14" width="697">
+<td colspan="13" width="697">
 <p><strong>Anexos IRPF</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="14" width="697">
+<td colspan="13" width="697">
 <p><strong>GCAP</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Bens imóveis</p>
 </td>
 
@@ -507,196 +431,124 @@ Paraná - 87.140-000<br />
  
 
 
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_ganho" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="4" width="200">
+<p>(Valor total)</p>
 </td>
 
+                <td><input type="number" id="quantidade_ganho" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
 
-
-
-
-
-
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
 <tr>
-<td colspan="7" width="350">
+<td colspan="4" width="264">
 <p>Direitos/ Bens moveis</p>
 </td>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-  
-  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="4" width="200">
+<p>(Valor total)</p>
 </td>
-
-
-
-
-
-
-
-
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
 <tr>
-<td colspan="7" width="350">
-<p>Participações societárias</p>
+<td colspan="4" width="264">
+<p>Participa&ccedil;&otilde;es societ&aacute;rias</p>
 </td>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-  
-  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="4" width="200">
+<p>(Valor total)</p>
 </td>
-
-
-
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
 <tr>
-<td colspan="7" width="350">
-<p>Moedas em espécie</p>
+<td colspan="4" width="264">
+<p>Moedas em esp&eacute;cie</p>
 </td>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-  
-  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="4" width="200">
+<p>(Valor total)</p>
 </td>
-
-
-
-
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
 <tr>
 <td colspan="13" width="697">
 <p><strong>RURAL</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="7" width="350">
-<p>-Com apuração receitas/despesa anual realizada</p>
+<td colspan="4" width="964">
+<p>-Com apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
 </td>
-
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_rural" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
-</td>
-
-
-
-
-
-
-
-
-
-<tr>
-<td colspan="7" width="350">
-<p>-Sem apuração receitas/despesa anual realizada</p>
-</td>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
-</td>
-
-
-
-
-<tr>
-<td colspan="13" width="697">
-<p><strong>AÇÕES/ VARIÁVEL</strong></p>
+<td colspan="4" width="200"><input type="number" id="quantidade_rural" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
 </tr>
 <tr>
-<td colspan="7" width="350">
-<p>Com Calculadora de apuração mensal</p>
+<td colspan="4" width="264">
+<p>Sem apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
 </td>
-<td colspan="7" width="50">
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="13" width="697">
+<p><strong>A&Ccedil;&Otilde;ES/ VARI&Aacute;VEL</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Com Calculadora de apura&ccedil;&atilde;o mensal</p>
+</td>
+<td colspan="4" width="200">
+<p>(Valor total)</p>
+</td>
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" width="264">
+<p>Sem Calculadora de apura&ccedil;&atilde;o mensal</p>
+</td>
+<td colspan="4" width="200">
 <p>(Valor total)</p>
 </td>
 
+                <td><input type="number" id="quantidade_variavel" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
+
+
+
+<td colspan="5" width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
-<td colspan="7" width="350">
-<p>Sem Calculadora de apuração mensal</p>
-</td>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_variavel" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
-</td>
-
-
-
-
-
-
-
-
-
-
-
-
-<tr>
 <td colspan="4" width="264">
-<p>Quantidade de ações</p>
+<p>Quantidade de a&ccedil;&otilde;es</p>
 </td>
 <td colspan="4" width="200">
 <p>(Quantidade)</p>
 </td>
-</tr>
-
-
-
-<td colspan="7" width="50">
-<div class="inputs">
-    <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
-</div>
-
+<td colspan="5" width="232">
+<p>&nbsp;</p>
 </td>
+</tr>
+<tr>
 
-
-
-
-
-
-
-
-
+</tr>
 </tbody>
 </table>
 <p><strong>&nbsp;</strong></p>
@@ -778,17 +630,17 @@ Paraná - 87.140-000<br />
 
 </table>
 
-<table border="1">
+<table>
 
 
 <tr>
 <td colspan="4" width="697">
-<p><strong>Valores Simulação</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Valores Simula&ccedil;&atilde;o</strong></p>
 </td>
 </tr>
 <tr>
-<td width="350">
-<p>Valor Previdência Oficial:</p>
+<td width="255">
+<p>Valor Previd&ecirc;ncia Oficial:</p>
 </td>
 
 
@@ -801,6 +653,9 @@ Paraná - 87.140-000<br />
 
 
 
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -813,7 +668,9 @@ Paraná - 87.140-000<br />
 
 
 
-
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -827,7 +684,9 @@ Paraná - 87.140-000<br />
 
 
 
-
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -841,6 +700,9 @@ Paraná - 87.140-000<br />
 
 
 
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -853,10 +715,12 @@ Paraná - 87.140-000<br />
 
 
 
-
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
-<td width="350">
+<td width="255">
 <p>Quantidade Dependentes:</p>
 </td>
 
@@ -870,23 +734,21 @@ Paraná - 87.140-000<br />
 
 
 
-<td colspan="2" width="50"><input type="number" id="quantidade_dependentes" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="2" width="210"><input type="number" id="quantidade_dependentes" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
 
 
 
 
-
+</td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
-</table>
-
-<table border="1">
-
-
 <tr>
 <td colspan="4" width="697">
-<p><strong>SIMULAÇÃO</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>SIMULA&Ccedil;&Atilde;O</strong></p>
 </td>
 </tr>
 <tr>
@@ -929,6 +791,9 @@ Paraná - 87.140-000<br />
 
 
 </td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -940,6 +805,9 @@ Paraná - 87.140-000<br />
 <td colspan="2" width="210" id="valorDedutivelSimplificado0">-</td>
 
 
+</td>
+<td width="232">
+<p>&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -953,6 +821,9 @@ Paraná - 87.140-000<br />
 
 
 </td>
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -963,7 +834,9 @@ Paraná - 87.140-000<br />
 <td colspan="2" width="210" id="aliquotaSimplificado0">-</td>
 
 </td>
-
+<td width="232">
+<p>&nbsp;</p>
+</td>
 </tr>
 <tr>
 <td width="255">
@@ -999,7 +872,7 @@ Paraná - 87.140-000<br />
 <hr>
 
 
-<table border="1">
+<table>
 
 
 <tr>
@@ -1137,7 +1010,7 @@ Paraná - 87.140-000<br />
 </td>
 </tr>
   <hr>
-<table border="1">
+<table>
 
 
 <tr>
@@ -1277,7 +1150,7 @@ Paraná - 87.140-000<br />
 </tbody>
 </table>
 <p><strong>&nbsp;</strong></p>
-<table border="1">
+<table>
 <tbody>
 <tr>
 <td width="697">
