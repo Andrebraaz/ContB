@@ -123,6 +123,52 @@
             color: #999;
         }
 
+    #valorFinalCompleto0 {
+        font-weight: bold;
+    }
+
+    #valorFinalSimplificado0 {
+        font-weight: bold;
+    }
+
+
+    #preco_total {
+        font-weight: bold;
+    }
+
+
+
+
+
+
+
+
+
+
+
+.inputs input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    -moz-appearance: textfield; /* Para Firefox */
+}
+
+.inputs input[type="number"]::placeholder {
+    color: #aaa;
+}
+
+.inputs input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
         @media (min-width: 768px) {
             .container {
                 padding: 1.5cm;
@@ -181,7 +227,7 @@
 <body>
 
 <div class="container">
-    <table style="width: 100%; border-collapse: collapse; float: left;" border="0">
+    <table style="width: 100%; border-collapse: collapse; float: left;" border="1">
         <tbody>
             <tr>
                 <td style="width: 47.5882%; text-align: center;">
@@ -198,11 +244,10 @@ Paraná - 87.140-000<br />
     </table>
     <hr />
 
-                <div class="inputs">
 
 
     <h2 style="text-align: center;">PROPOSTA DE SERVIÇOS DE IMPOSTO DE RENDA</h2>
-                </div>
+             
 
 
 
@@ -216,7 +261,7 @@ Paraná - 87.140-000<br />
 
 
 
-<table>
+<table border="1">
 <tbody>
 
 <tr>
@@ -273,44 +318,79 @@ Paraná - 87.140-000<br />
 
 
 
-<table border="0">
-
-<td width="123"><p>Ano declaração:</p></td>
-
-<td width="60" style="text-align: right"><p>2024/2023</p></td>
+<table style="height: 30px; width: 100%; border-collapse: collapse; float: left;" border="1">
 
 
-<td width="30"><input type="checkbox" id="exampleCheckbox1" name="exampleCheckbox1" value="value1"></td>
-
-<td width="60" style="text-align: right"><p>2023/2022</p></td>
+<td width="125"><p>Ano Declaração:</p></td>
 
 
-<td width="30"><input type="checkbox" id="exampleCheckbox2" name="exampleCheckbox2" value="value2"></td>
+
+<td width="95" style="text-align: right; white-space: wrap; word-break: break-all;">
+    <p>2024/2023</p>
+</td>
 
 
-<td width="60" style="text-align: right"><p>2022/2021</p></td>
 
 
-<td width="30"><input type="checkbox" id="exampleCheckbox3" name="exampleCheckbox3" value="value3"></td>
+<td width="25"><input type="checkbox" id="exampleCheckbox1" name="exampleCheckbox1" value="value1"></td>
 
 
-<td width="60" style="text-align: right"><p>2021/2020</p></td>
 
 
-<td width="30"><input type="checkbox" id="exampleCheckbox4" name="exampleCheckbox4" value="value4"></td>
+<td width="95" style="text-align: right; white-space: wrap; word-break: break-all;">
+    <p>2023/2022</p>
+</td>
 
 
-<td width="60" style="text-align: right"><p>2020/2019</p></td>
 
-<td width="30"><input type="checkbox" id="exampleCheckbox5" name="exampleCheckbox5" value="value5"></td>
+
+<td width="25"><input type="checkbox" id="exampleCheckbox2" name="exampleCheckbox2" value="value2"></td>
+
+ 
+
+<td width="95" style="text-align: right; white-space: wrap; word-break: break-all;">
+    <p>2022/2021</p>
+</td>
+
+
+<td width="25"><input type="checkbox" id="exampleCheckbox3" name="exampleCheckbox3" value="value3"></td>
+
+
+
+
+<td width="99" style="text-align: right; white-space: wrap; word-break: break-all;">
+    <p>2021/2020</p>
+</td>
+
+
+
+<td width="15"><input type="checkbox" id="exampleCheckbox4" name="exampleCheckbox4" value="value4"></td>
+
+
+
+
+<td width="95" style="text-align: right; white-space: wrap; word-break: break-all;">
+    <p>2020/2019</p>
+</td>
+
+
+
+
+
+<td width="25"><input type="checkbox" id="exampleCheckbox5" name="exampleCheckbox5" value="value5"></td>
 
 <td id="quantidade_declaracao"></td>
 
 
 
-
   </table>
-<table>
+
+
+
+
+
+
+
 
 
 
@@ -327,230 +407,369 @@ Paraná - 87.140-000<br />
 
 </tr>
 <tr>
-<td colspan="13" width="697">
+<td colspan="2" width="697">
 <p><strong>Lançamentos</strong></p>
 </td>
+
+
+
+  </table>
+1
+<table border="1">
+
+
 <tr>
-<td colspan="4" width="264">
+<td colspan="1" width="100">
 <p>Quantidade Bens moveis e imóveis</p>
 </td>
-<td>
+
+
+
+
+<td colspan="1" width="50">
 <div class="inputs">
-    <input type="text" id="cliente" placeholder="Nome do Cliente" style="height: 8px;">
+    <input type="number" id="quantidade_bens_ativos" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
 </div>
 
 </td>
 
-<div class="inputs">
-
-                <td colspan="4" width="200"><input type="number" id="quantidade_bens_ativos" min="0" value="0" onchange="calcularPreco()" required></td>
-         
-</div>
 
 
 
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
+
 </tr>
 <tr>
-<td colspan="13" width="697">
+<td colspan="14" width="697">
 <p><strong>Rendimentos</strong></p>
 </td>
 </tr>
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td colspan="4" width="264">
-<p>Valor Total Tribut&aacute;vel</p>
+<td colspan="1" width="100">
+<p>Valor Total Tributável</p>
 </td>
 
 
 
 
 
-                <td colspan="4" width="200"><input type="number" id="quantidade_tributavel" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_tributavel" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-
-
-
-
-
-
-
-<td colspan="5" width="232">
-<p>&nbsp;</p>
 </td>
+
+
+
+
+
+
+
+
+
+
+
+
 </tr>
 <tr>
-<td colspan="4" width="264">
+<td colspan="1" width="100">
 <p>Valor Total Exclusivo</p>
 </td>
-<td colspan="4" width="200"><input type="number" id="quantidade_exclusivo" min="0" value="0" onchange="calcularPreco()" required></td>
 
-<td colspan="5" width="232">
-<p>&nbsp;</p>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_exclusivo" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
-</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td colspan="4" width="264">
+<td colspan="1" width="100">
 <p>Valor Total Isento</p>
 </td>
-<td colspan="4" width="200">
-                <input type="number" id="quantidade_isento" min="0" value="0" onchange="calcularPreco()" required></td>
 
-<td colspan="5" width="232">
-<p>&nbsp;</p>
+
+
+
+
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_isento" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
-</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td colspan="4" width="264">
+<td colspan="1" width="100">
 <p>Valor Total RRA</p>
 </td>
-<td colspan="4" width="200"><input type="number" id="quantidade_rra" min="0" value="0" onchange="calcularPreco()" required></td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_rra" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
-</tr>
+
+
+
+
 <tr>
-<td colspan="13" width="697">
+<td colspan="2" width="697">
 <p><strong>Anexos IRPF</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="13" width="697">
+<td colspan="2" width="697">
 <p><strong>GCAP</strong></p>
 </td>
 </tr>
+
+
+
+
+
+
 <tr>
-<td colspan="4" width="264">
+<td colspan="1" width="100">
 <p>Bens imóveis</p>
 </td>
 
 
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_ganho" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Direitos/ Bens moveis</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+  
+  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Participações societárias</p></td>
  
 
 
-<td colspan="4" width="200">
-<p>(Valor total)</p>
+
+<td colspan="1" width="58">
+<div class="inputs">
+  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
 
-                <td><input type="number" id="quantidade_ganho" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
 
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
+
 <tr>
-<td colspan="4" width="264">
-<p>Direitos/ Bens moveis</p>
+<td colspan="1" width="100">
+<p>Moedas em espécie</p>
 </td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
+ 
+
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+  
+  <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
+
+
+
+
+
 <tr>
-<td colspan="4" width="264">
-<p>Participa&ccedil;&otilde;es societ&aacute;rias</p>
-</td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
-</td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td colspan="4" width="264">
-<p>Moedas em esp&eacute;cie</p>
-</td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
-</td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td colspan="13" width="697">
+<td colspan="2" width="697">
 <p><strong>RURAL</strong></p>
 </td>
 </tr>
-<tr>
-<td colspan="4" width="964">
-<p>-Com apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
-</td>
-<td colspan="4" width="200"><input type="number" id="quantidade_rural" min="0" value="0" onchange="calcularPreco()" required></td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td colspan="4" width="264">
-<p>Sem apura&ccedil;&atilde;o receitas/despesa anual realizada</p>
-</td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
-</td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td colspan="13" width="697">
-<p><strong>A&Ccedil;&Otilde;ES/ VARI&Aacute;VEL</strong></p>
-</td>
-</tr>
-<tr>
-<td colspan="4" width="264">
-<p>Com Calculadora de apura&ccedil;&atilde;o mensal</p>
-</td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
-</td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td colspan="4" width="264">
-<p>Sem Calculadora de apura&ccedil;&atilde;o mensal</p>
-</td>
-<td colspan="4" width="200">
-<p>(Valor total)</p>
-</td>
-
-                <td><input type="number" id="quantidade_variavel" min="0" value="0" onchange="calcularPreco()" required></td>
 
 
 
 
 
-<td colspan="5" width="232">
-<p>&nbsp;</p>
+
+<tr>
+<td colspan="1" width="100">
+<p>-Com apuração anual realizada</p>
+</td>
+
+
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_rural" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>-Sem apuração anual realizada</p>
+</td>
+
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_bens_ativos" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+
+
+
+
+
+
+<tr>
+<td colspan="2" width="697">
+<p><strong>AÇÕES/ VARIÁVEL</strong></p>
 </td>
 </tr>
+
+
+
+
 <tr>
-<td colspan="4" width="264">
-<p>Quantidade de a&ccedil;&otilde;es</p>
+<td colspan="1" width="100">
+<p>Com Calculadora de apuração mensal</p>
 </td>
-<td colspan="4" width="200">
-<p>(Quantidade)</p>
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_variavel" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
-<td colspan="5" width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
+
+
 
 </tr>
+<tr>
+<td colspan="1" width="100">
+<p>Sem Calculadora de apuração mensal</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_variavel" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Quantidade de ações</p>
+</td>
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_variavel" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
 </tbody>
 </table>
+
+
 <p><strong>&nbsp;</strong></p>
 
 <tr>
@@ -629,148 +848,202 @@ Paraná - 87.140-000<br />
 </tr>
 
 </table>
-
-<table>
+1
+<table border="1">
 
 
 <tr>
-<td colspan="4" width="697">
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Valores Simula&ccedil;&atilde;o</strong></p>
+<td colspan="2" width="697">
+<p><strong>Valores Simulação</strong></p>
 </td>
 </tr>
+
+
 <tr>
-<td width="255">
-<p>Valor Previd&ecirc;ncia Oficial:</p>
+<td colspan="1" width="100">
+<p>Valor Previdência Oficial:</p>
 </td>
 
 
 
 
 
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="valorPrevidenciaOficial" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-<td colspan="2" width="210"><input type="number" id="valorPrevidenciaOficial" min="0" value="0" onchange="calcularPreco()" required></td>
+</td>
 
 
 
 
-<td width="232">
-<p>&nbsp;</p>
+<tr>
+<td colspan="1" width="100">
+<p>Valor Previdência FAPI:</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="valorPrevidenciaFAPI" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
 </td>
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
-<p>Valor Previd&ecirc;ncia FAPI:</p>
-</td>
-
-
-<td colspan="2" width="210"><input type="number" id="valorPrevidenciaFAPI" min="0" value="0" onchange="calcularPreco()" required></td>
-
-
-
-
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
+<td colspan="1" width="100">
 <p>Imposto Retido:</p>
 </td>
 
 
-<td colspan="2" width="210"><input type="number" id="impostoRetido" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-
-
-
-
-<td width="232">
-<p>&nbsp;</p>
 </td>
 </tr>
+
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100">
 <p>Despesas Médicas</p>
 </td>
 
 
-<td colspan="2" width="210"><input type="number" id="despesasMedicas" min="0" value="0" onchange="calcularPreco()" required></td>
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="despesasMedicas" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-
-
-
-
-<td width="232">
-<p>&nbsp;</p>
 </td>
 </tr>
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100">
 <p>Despesas Instrução (até R$ 3.561,5):</p>
 </td>
 
 
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="despesasInstrucao" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-<td colspan="2" width="210"><input type="number" id="despesasInstrucao" min="0" value="0" onchange="calcularPreco()" required></td>
-
-
-
-<td width="232">
-<p>&nbsp;</p>
 </td>
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100">
 <p>Quantidade Dependentes:</p>
 </td>
 
 
-
-
-
-
-
-
-
-
-
-<td colspan="2" width="210"><input type="number" id="quantidade_dependentes" min="0" value="0" onchange="calcularPreco()" required></td>
-
-
-
-
-
+<td colspan="1" width="59">
+<div class="inputs">
+    <input type="number" id="quantidade_dependentes" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
 </td>
-<td width="232">
-<p>&nbsp;</p>
+</tr>
+
+
+
+
+
+ 
+
+
+
+
+
+
+</table>
+1
+
+
+
+
+<table style="height: 30px; width: 100%; border-collapse: collapse; float: left;" border="1">
+
+
+<tr>
+<td colspan="3" width="100%">
+<p><strong>SIMULAÇÃO</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="4" width="697">
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>SIMULA&Ccedil;&Atilde;O</strong></p>
-</td>
-</tr>
-<tr>
-<td width="255">
+<td colspan="1" width="50%">
 <p><strong>&nbsp;</strong></p>
 </td>
-<td colspan="2" width="210">
-<p>M&eacute;todo COMPLETO</p>
+
+
+<td  colspan="1" width="25%">
+<p>Método SIMPLIFICADO</p>
 </td>
-<td width="232">
-<p>M&eacute;todo SIMPLIFICADO</p>
+
+
+<td colspan="1" width="25%">
+<p>Método COMPLETO</p>
 </td>
+
+
+
 </tr>
+
+
 <tr>
-<td width="255">
+<td  colspan="1" width="255">
 <p>Base de Cálculo:</p>
 </td>
 
 
+<td colspan="1" width="210" id="baseDeCalculoSimplificado0">-</td>
+<td colspan="1" width="210" id="baseDeCalculoCompleto0">-</td>
 
-<td colspan="2" width="210" id="baseDeCalculoCompleto0">-</td>
-<td colspan="2" width="210" id="baseDeCalculoSimplificado0">-</td>
 
 
 
@@ -780,86 +1053,80 @@ Paraná - 87.140-000<br />
 
 </tr>
 <tr>
-<td width="255">
+<td  colspan="1" width="255">
 <p>Imposto a Pagar:</p>
 </td>
 
-
-<td colspan="2" width="210" id="impostoAPagarCompleto0">-</td>
-<td colspan="2" width="210" id="impostoAPagarSimplificado0">-</td>
-
+<td colspan="1" width="210" id="impostoAPagarSimplificado0">-</td>
+<td colspan="1" width="210" id="impostoAPagarCompleto0">-</td>
 
 
-</td>
-<td width="232">
-<p>&nbsp;</p>
+
+
 </td>
 </tr>
 <tr>
-<td width="255">
+<td  colspan="1" width="255">
 <p>Valor Dedutível:</p>
 </td>
 
+<td colspan="1" width="210" id="valorDedutivelSimplificado0">-</td>
+<td colspan="1" width="210" id="valorDedutivelCompleto0">-</td>
 
-<td colspan="2" width="210" id="valorDedutivelCompleto0">-</td>
-<td colspan="2" width="210" id="valorDedutivelSimplificado0">-</td>
 
 
-</td>
-<td width="232">
-<p>&nbsp;</p>
 </td>
 </tr>
 <tr>
-<td width="255">
+<td  colspan="1" width="255">
 <p>Valor Final:</p>
 </td>
 
+<td colspan="1" width="210" id="valorFinalSimplificado0">-</td>
+<td colspan="1" width="210" id="valorFinalCompleto0">-</td>
 
-<td colspan="2" width="210" id="valorFinalCompleto0">-</td>
-<td colspan="2" width="210" id="valorFinalSimplificado0">-</td>
 
 
-</td>
-<td width="232">
-<p>&nbsp;</p>
 </td>
 </tr>
 <tr>
-<td width="255">
+<td  colspan="1" width="255">
 <p>Alíquota:</p>
 </td>
 
-<td colspan="2" width="210" id="aliquotaCompleto0">-</td>
-<td colspan="2" width="210" id="aliquotaSimplificado0">-</td>
+<td colspan="1" width="210" id="aliquotaSimplificado0">-</td>
+<td colspan="1" width="210" id="aliquotaCompleto0">-</td>
+
 
 </td>
-<td width="232">
-<p>&nbsp;</p>
+
+</tr>
+<tr>
+<td  colspan="2" width="255">
+<p>Dedutível para Igualar Simplificado:</p>
+</td>
+
+<td colspan="1" width="442" id="dedutiveParaIgualarSimplificado">-</td>
+
+
+
+
+
 </td>
 </tr>
 <tr>
-<td width="255">
-<p>Dedut&iacute;vel para Igualar Simplificado:</p>
+<td  colspan="2" width="255">
+<p>Valor Máximo de FAPI:</p>
 </td>
 
-<td colspan="3" width="442" id="dedutiveParaIgualarSimplificado">-</td>
-
-
-
-
-
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Valor M&aacute;ximo de FAPI:</p>
-</td>
-
-<td colspan="3" width="442" id="valorMaximoFAPI">-</td>
+<td colspan="1" width="442" id="valorMaximoFAPI">-</td>
 
 
 </table>
+1
+<table border="1">
+
+
 </td>
 </tr>
 <tr>
@@ -871,286 +1138,509 @@ Paraná - 87.140-000<br />
 
 <hr>
 
+</table>
+1
+<table border="1">
 
-<table>
+
+<tr>
+<td colspan="2" width="697">
+<p><strong>ACRÉSCIMOS</strong></p>
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Atendimento em Malha (minutos)</p>
+</td>
+
+
+<td colspan="1" width="55">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Apenas em atraso</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Primeira Declaração (acima 5 bens)</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
 
 
 <tr>
-<td colspan="4" width="697">
-<p><strong>ACR&Eacute;SCIMOS</strong></p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Atendimento em Malha Cliente (minutos)</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Atendimento em Malha Eventual (minutos)</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Em atraso</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Primeira Declara&ccedil;&atilde;o (acima 5 bens)</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
+<td colspan="1" width="100">
 <p>Outros</p>
 </td>
 
 
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="quantidade_outros" min="0" value="0" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
 
-<td colspan="2" width="210">
-
-                <input type="number" id="quantidade_outros" min="0" value="0" onchange="calcularPreco()" required></td>
-
+</td>
+</tr>
 
 
 
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
 <tr>
-<td colspan="4" width="697">
-<p><strong>DEDU&Ccedil;&Otilde;ES</strong></p>
+<td colspan="1" width="100">
+<p>Subtotal:</p>
 </td>
+
+<td colspan="1" width="50"id="subtotal1">-</td>
 </tr>
-<tr>
-<td width="255">
-<p>Quantidade de Bens maior que 10</p>
-</td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Declaracao do conjuge (rural)</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Varias em atraso</p>
-</td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Antecipada (Realizado at&eacute; 30/04/2024)</p>
-</td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="255">
-<p>Desconto funcion&aacute;rio de parceiros (10%)</p>
-</td>
-<td colspan="2" width="210">
-<p>(Valor total)</p>
-</td>
-<td width="232">
-<p>&nbsp;</p>
-</td>
-</tr>
+
+
+
 
 </table>
+1
+<table border="1">
+
+
+
+<tr>
+<td colspan="2" width="697">
+<p><strong>DEDUÇÕES</strong></p>
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Quantidade de Bens maior que 10</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Declaracao do conjuge (rural)</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Varias em atraso</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Antecipada (Realizado at&eacute; 30/04/2024)</p>
+</td>
+
+
+<td colspan="1" width="53">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 6px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Desconto funcion&aacute;rio de parceiros (10%)</p>
+</td>
+
+
+<td colspan="1" width="50">
+<div class="inputs">
+    <input type="number" id="impostoRetido" min="0" value="99" onchange="calcularPreco()" style="height: 4px;max-width: 100px;">
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td colspan="1" width="100">
+<p>Subtotal:</p>
+</td>
+<td colspan="1" width="50"id="subtotal2">-</td>
+</tr>
+
+
+
+
+</table>
+<table border="1">
+
 <tr>
 <td colspan="4" width="697">
 <p><strong>PROPOSTA DE VALOR PARA SERVIÇOS</strong></p>
 </td>
 </tr>
   <hr>
-<table>
+</table>
+1
+<table border="1">
 
 
 <tr>
 <td width="255">
-<p><strong>Dura&ccedil;&atilde;o Estimada:</strong></p>
+<p><strong>Duração Estimada:</strong></p>
 </td>
-<td colspan="2" width="210">
-<p><strong>&nbsp;</strong></p>
-</td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
-</tr>
+
+
+
+
+</table>
+ 
+<table border="1">
+
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100"
 <p>Horas planejadas:</p>
 </td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
+
+
+
+<td colspan="1" width="50"
+               id="horaplanejada">-</td>
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
-<p>Horas extras</p>
+<td colspan="1" width="100"
+<p>Horas extras(A partir dia 14 maio)</p>
 </td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p><strong>A partir dia 14 maio</strong></p>
-</td>
+
+
+
+<td colspan="1" width="50"
+               id="horaextra">-</td>
 </tr>
+
+
+
+
+
+
+
+</table>
+1
+<table border="1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100"
 <p><strong>Impostos e Taxas</strong></p>
 </td>
-<td colspan="2" width="210">
-<p><strong>&nbsp;</strong></p>
-</td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
-</tr>
+
+
+
+</table>
+1
+<table border="1">
+
+
+
+
+
+
 <tr>
-<td width="255">
+<td colspan="1" width="100"
 <p>Valor Estimado dos Impostos</p>
 </td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
+
+
+
+<td colspan="1" width="50"
+               id="impostotaxa">-</td>
 </tr>
+
+
+
+
+
+
+
+</table>
+1
+<table border="1">
+
+
+
+
+
+
+
+
 <tr>
-<td width="255">
-<p><strong>Avalia&ccedil;&atilde;o de Riscos</strong></p>
+<td colspan="1" width="100"
+<p><strong>Avaliação de Riscos</strong></p>
 </td>
-<td colspan="2" width="210">
-<p><strong>&nbsp;</strong></p>
+
+
+
+
+</table>
+1
+<table border="1">
+
+
+
+
+
+<tr>
+<td colspan="1" width="100"
+<p>
+Riscos Operacionais(Falhas de Sistema, 
+Vulnerabilidades de segurança, 
+Backup robusto,
+Alterações na legislação,
+Garantia de entrega no prazo...)
+</p>
 </td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
+
+
+
+<td colspan="1" width="83"
+               id="impostotaxa">-</td>
 </tr>
+
+
+
+</table>
+1
+<table border="1">
+
+
+
+
+
+
 <tr>
-<td width="255">
-<p>Riscos Operacionais</p>
-</td>
-<td colspan="2" width="210">
-<p>[Valor total]</p>
-</td>
-<td width="232">
-<p><strong>&nbsp;</strong></p>
-</td>
-</tr>
-<tr>
-<td width="255">
+<td colspan="1" width="100">
 <p><strong>VALOR FINAL DO SERVIÇO</strong></p>
 </td>
 
 
 
-<td colspan="3" width="442"
+<td colspan="1" width="50"
 
 
                id="preco_total">-</td>
 
-
-
-
-
 </tr>
+
+
+</table>
+1
+<table border="1">
+
+
 <tr>
-<td colspan="4" width="697">
-<p><strong>Condi&ccedil;&otilde;es de Pagamento:</strong></p>
+<td colspan="2" width="697">
+<p><strong>Condições de Pagamento:</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="4" width="697">
+<td colspan="1" width="100">
 <p>O pagamento integral &eacute; devido no momento da presta&ccedil;&atilde;o dos servi&ccedil;os, podendo ser realizado atrav&eacute;s de transfer&ecirc;ncia banc&aacute;ria, PIX, ou cart&atilde;o de cr&eacute;dito.</p>
 </td>
+
+<td colspan="1" width="50">
+<p>Chave Pix: CNPJ</p>
+</td>
 </tr>
+
+
+</table>
+1
+<table border="1">
+
+
+
 <tr>
-<td colspan="4" width="697">
-<p>Chave Pix: CNPJ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<td colspan="1" width="697">
+<p><strong>Termos e Condições:</strong></p>
 </td>
 </tr>
 <tr>
-<td colspan="4" width="697">
-<p><strong>Termos e Condi&ccedil;&otilde;es:</strong></p>
-</td>
-</tr>
-<tr>
-<td colspan="4" width="697">
+<td colspan="1" width="697">
 <ul>
 <li>A proposta tem validade de 2 dias, todos os pagamentos s&atilde;o n&atilde;o reembols&aacute;veis.</li>
 </ul>
 </td>
 </tr>
 <tr>
-<td colspan="4" width="697">
+<td colspan="1" width="697">
 <ul>
 <li>O cliente &eacute; respons&aacute;vel por fornecer todas as informa&ccedil;&otilde;es e documentos necess&aacute;rios para a prepara&ccedil;&atilde;o precisa da declara&ccedil;&atilde;o de Imposto de Renda.</li>
 </ul>
 </td>
 </tr>
-<tr>
-<td width="156">&nbsp;</td>
-<td width="13">&nbsp;</td>
-<td width="125">&nbsp;</td>
-<td width="157">&nbsp;</td>
-</tr>
+
 </tbody>
 </table>
 <p><strong>&nbsp;</strong></p>
-<table>
+<table border="1">
 <tbody>
 <tr>
 <td width="697">
@@ -1258,6 +1748,73 @@ document.getElementById('aliquotaCompleto0').innerHTML = aliquotaCompleto.toFixe
 
 document.getElementById('dedutiveParaIgualarSimplificado').innerHTML = dedutiveParaIgualarSimplificado.toFixed(2);
 document.getElementById('valorMaximoFAPI').innerHTML = valorMaximoFAPI.toFixed(2);
+
+
+
+
+
+
+
+
+//altera para aparecer no documento
+
+
+
+document.getElementById("baseDeCalculoSimplificado0").textContent = "R$ " + parseFloat(document.getElementById("baseDeCalculoSimplificado0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+document.getElementById("baseDeCalculoCompleto0").textContent = "R$ " + parseFloat(document.getElementById("baseDeCalculoCompleto0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+document.getElementById("impostoAPagarSimplificado0").textContent = "R$ " + parseFloat(document.getElementById("impostoAPagarSimplificado0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+document.getElementById("impostoAPagarCompleto0").textContent = "R$ " + parseFloat(document.getElementById("impostoAPagarCompleto0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+document.getElementById("valorDedutivelSimplificado0").textContent = "R$ " + parseFloat(document.getElementById("valorDedutivelSimplificado0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+document.getElementById("valorDedutivelCompleto0").textContent = "R$ " + parseFloat(document.getElementById("valorDedutivelCompleto0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+
+document.getElementById("valorFinalSimplificado0").textContent = "R$ " + parseFloat(document.getElementById("valorFinalSimplificado0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+document.getElementById("valorFinalCompleto0").textContent = "R$ " + parseFloat(document.getElementById("valorFinalCompleto0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+document.getElementById("aliquotaSimplificado0").textContent = " % "  + parseFloat(document.getElementById("aliquotaSimplificado0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+document.getElementById("aliquotaCompleto0").textContent = " % "  + parseFloat(document.getElementById("aliquotaCompleto0").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+document.getElementById("dedutiveParaIgualarSimplificado").textContent = "R$ " + parseFloat(document.getElementById("dedutiveParaIgualarSimplificado").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+document.getElementById("valorMaximoFAPI").textContent = "R$ " + parseFloat(document.getElementById("valorMaximoFAPI").textContent).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
+
+
+
+
 
 
 
