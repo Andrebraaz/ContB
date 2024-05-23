@@ -78,8 +78,8 @@
                 }
             });
 
-            const url = `https://api.whatsapp.com/send?phone=554432444085&text=${encodeURIComponent(mensagem)}`;
-
+            const numeroWhatsApp = '554432444085';
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
         }
     </script>
