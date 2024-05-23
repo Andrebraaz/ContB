@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Folha Ponto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .container input, .container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .funcionario {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Folha de Ponto</h2>
+        <form id="folhaPontoForm">
+            <div id="funcionarios">
+                <div class="funcionario">
+                    <input type="text" name="nome" placeholder="Nome do Funcionário" required>
+                    <input type="number" name="diasTrabalhados" placeholder="Dias Trabalhados" required>
+                    <input type="number" name="horasExtras" placeholder="Horas Extras" required>
+                    <input type="number" name="horasDescontadas" placeholder="Horas Descontadas" required>
+                </div>
+            </div>
+            <button type="button" onclick="adicionarFuncionario()">Adicionar Outro Funcionário</button>
+            <button type="button" onclick="enviarDados()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function adicionarFuncionario() {
+            const funcionarioHTML = `
+                <div class="funcionario">
+                    <input type="text" name="nome" placeholder="Nome do Funcionário" required>
+                    <input type="number" name="diasTrabalhados" placeholder="Dias Trabalhados" required>
+                    <input type="number" name="horasExtras" placeholder="Horas Extras" required>
+                    <input type="number" name="horasDescontadas" placeholder="Horas Descontadas" required>
+                </div>`;
+            document.getElementById('funcionarios').insertAdjacentHTML('beforeend', funcionarioHTML);
+        }
+
+        function enviarDados() {
+            const funcionarios = document.querySelectorAll('.funcionario');
+            let mensagem = 'Folha de Ponto:\n';
+
+            funcionarios.forEach(funcionario => {
+                const nome = funcionario.querySelector('input[name="nome"]').value;
+                const diasTrabalhados = funcionario.querySelector('input[name="diasTrabalhados"]').value;
+                const horasExtras = funcionario.querySelector('input[name="horasExtras"]').value;
+                const horasDescontadas = funcionario.querySelector('input[name="horasDescontadas"]').value;
+
+                if(nome && diasTrabalhados && horasExtras && horasDescontadas) {
+                    mensagem += `\nNome: ${nome}\nDias Trabalhados: ${diasTrabalhados}\nHoras Extras: ${horasExtras}\nHoras Descontadas: ${horasDescontadas}\n`;
+                }
+            });
+
+            const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
