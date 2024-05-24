@@ -1,1 +1,927 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+
+    <title>Calculadora INSS de Obras SERO - Pessoa Fisica</title>
+    <style>
+
+
+
+        tr:hover {
+            background-color: #D6EEEE;
+        }
+
+        .container {
+            width: 794px; /* largura aproximada do papel A4 em pixels */
+            margin: 0 auto; /* Isso centraliza a div horizontalmente */
+        }
+
+        #fatorAjuste {
+            display: none;
+        }
+
+        #valorMaoObraNecessario {
+            display: none;
+        }
+
+        body {
+            font-family: Roboto, Arial, sans-serif; /* Roboto como primeira opção, Arial ou uma fonte sans-serif genérica como alternativa */
+        }
+    </style>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+
+    <div class="container">
+
+
+
+<table style="height: 80px; width: 100%; border-collapse: collapse; float: left;" border="0">
+<tbody>
+<tr style="height: 80px;">
+<td style="width: 47.5882%; height: 80px; text-align: center;">
+<h2><iframe src="https://www.contbraz.com.br/CONTRATANTE-2400701/site/47701/imagens/5fb5bc05-c312-49dd-8503-c993fb768dab_cont_logos-onvio500px-x-80px-sem-fundo-claro.png" width="280" height="80" frameborder="0" scrolling="no"></iframe></h2>
+</td>
+<td style="width: 51.4118%; height: 80px; text-align: center;">CONTBRAZ CONTABILIDADE<br />Departamento Tribut&aacute;rio<br />Avenida Curitiba 75, Pai&ccedil;andu, Paran&aacute; - 87.140-000<br />Sac@contbraz.com.br - (44)3244-4085<br /><br /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 style="text-align: center;">Calculadora INSS de Obras SERO - Pessoa Fisica&nbsp;</h2>
+
+
+    <table>
+
+
+
+
+
+<tr>
+         <td ><strong>Área Total</strong></td>
+</tr>
+
+
+
+
+
+        <tr>
+            <td class="amarelo"><li>Área TOTAL com complementares</li></td>
+<td class="amarelo"><input type="number" id="areaTotal" value="120" oninput="calcular(); calcular();"></td>
+
+            <td>m2</td>
+        </tr>
+
+
+
+
+<tr>
+         <td ><strong>Área complementares</strong></td>
+</tr>
+
+
+
+
+
+
+
+
+        <tr>
+            <td class="amarelo"><li>Quadra esportiva ou poliesportiva:</li></td>
+            <td class="amarelo"><input type="number" id="quadra" value="0" oninput="calcular(); calcular();"></td>
+            <td>m2</td>
+            <td>
+                <select id="quadraCobertura" onchange="calcular(); calcular();">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="amarelo"><li>Piscina:</li></td>
+            <td class="amarelo"><input type="number" id="piscina" value="0" oninput="calcular(); calcular();"></td>
+            <td>m2</td>
+            <td>
+                <select id="piscinaCobertura" onchange="calcular(); calcular();">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="amarelo"><li>Garagem ou estacionamento térreos:</li></td>
+            <td class="amarelo"><input type="number" id="garagem" value="0" oninput="calcular(); calcular();"></td>
+            <td>m2</td>
+            <td>
+                <select id="garagemCobertura" onchange="calcular(); calcular();">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </td>
+        </tr>
+
+
+
+
+
+
+
+
+
+
+<tr>
+         <td ><strong>Categorização</strong></td>
+</tr>
+
+
+
+
+
+
+
+
+
+        <tr>
+            <td><li>Destinação:</li></td>
+            <td class="azul">
+                <select id="destinacao" onchange="calcular(); calcular();">
+                    <option value="Residencial Unifamiliar">Residencial Unifamiliar</option>
+                    <option value="Residencial Multifamiliar">Residencial Multifamiliar</option>
+                    <option value="Comercial salas e lojas">Comercial salas e lojas</option>
+                    <option value="Galpao industrial">Galpão industrial</option>
+                </select>
+            </td>
+        </tr>
+
+
+<tr>
+    <td><li>Percentual de Tipo de Obra:</li></td>
+    <td class="azul">
+        <select id="tipoObra" onchange="calcular(); calcular();">
+            <option value="Alvenaria">Alvenaria</option>
+            <option value="Madeira">Madeira</option>
+            <option value="Mista">Mista</option>
+        </select>
+    </td>
+</tr>
+
+
+
+<tr>
+    <td><li>Categoria:</li></td>
+    <td class="azul">
+        <select id="categoria" onchange="calcular(); calcular();">
+            <option value="Obra Nova">Obra Nova</option>
+            <option value="Acrescimo">Acrescimo</option>
+            <option value="Reforma">Reforma</option>
+            <option value="Demolicao">Demolicao</option>
+        </select>
+    </td>
+</tr>
+
+
+
+
+
+<tr>
+         <td ><strong>Data</strong></td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+    <td><li>Início da Obra:</li></td>
+    <td><input type="date" id="inicioObra"></td>
+</tr>
+<tr>
+    <td><li>Fim da Obra:</li></td>
+    <td><input type="date" id="fimObra"></td>
+</tr>
+
+
+
+
+
+<tr>
+         <td ><strong>Deduções</strong></td>
+</tr>
+
+
+
+        <tr>
+            <td class="amarelo"><li>Valor NF Pré-Moldado ou de Pré-Fabricado:</li></td>
+            <td class="amarelo"><input type="number" id="valorNF" value="0" oninput="calcular(); calcular();"></td>
+            <td>R$</td>
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </table>
+
+    <p id="resultado"></p>
+    <p id="valorVAU"></p>
+
+    <p id="fatorSocial"></p>
+    <p id="aliquotaNF"></p>
+    <p id="valorDesconto"></p>
+<p id="percentualObra"></p>
+<p id="percentualCategoria"></p>
+<p id="remuneracaoDevida"></p>
+
+
+
+
+
+<p><li>Houve remuneração por uso de concreto usinado, massa asfáltica ou argamassa usinada?</li></p>
+<label><input type="radio" name="remuneracaoUsinado" value="sim" onchange="calcular(); calcular();" > Sim</label>
+<label><input type="radio" name="remuneracaoUsinado" value="nao" onchange="calcular(); calcular();" checked> Não</label>
+
+
+
+
+
+
+    <p><li> Valor NF para desconto Pré moldado: Solicitar ContBraz </li></p>
+    <p><li> Valor NF para desconto MEI: Solicitar ContBraz </li></p>
+
+<p id="decadenciaTotal"></p>
+
+
+
+
+
+
+
+<p id="percentualUsinado"></p>
+
+
+<p id="percentualAplicacao"></p>
+<p id="percentualAjuste"></p>
+<p id="remuneracaoUsinado"></p>
+<p id="remuneracaoAposAbatimento"></p>
+
+
+<p><strong>Custo da Obra</strong></p>
+
+
+    <p id="custoObra"></p>
+
+
+
+
+<hr />
+<table>
+    <caption><strong>Tabela de Cálculo Guia de Contribuições</strong></caption>
+    <thead>
+        <tr>
+            <th>Contribuições</th>
+            <th>Percentual</th>
+            <th>Débito</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaContribuicoes">
+        <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2"><h4>Total a pagar INSS obra:</h4></td>
+            <td id="totalDebito" style="color: red;"></td>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+<p><h4><span>Total a pagar com auxilio ContBraz: </span><span style="color: #23d400;">R$</span> <span id="totalARecolher" style="color: #23d400;"></span></h4></p>
+
+
+
+    <p> <span id="fatorAjuste"></span></p>
+    <p> <span id="valorMaoObraNecessario"></span></p>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+// Declare totalDebito como uma variável global
+var totalDebito = 0;
+
+function calcularDebitos(remuneracaoAposAbatimento) {
+    var contribuicoes = [
+        { nome: "CP Patronal - Empregados", percentual: 0.2 },
+        { nome: "CP Segurados - Empregados", percentual: 0.08 },
+        { nome: "CP Patronal - GILRAT", percentual: 0.03 },
+        { nome: "CP Terceiros - Salário Educação", percentual: 0.025 },
+        { nome: "CP Terceiros - INCRA", percentual: 0.002 },
+        { nome: "CP Terceiros - SEBRAE", percentual: 0.006 },
+        { nome: "CP Terceiros - SESI", percentual: 0.015 },
+        { nome: "CP Terceiros - SENAI", percentual: 0.01 }
+
+    ];
+
+    // Remova a declaração de var totalDebito
+    totalDebito = 0;
+
+    var tabela = document.getElementById('tabelaContribuicoes');
+
+    // Limpa o conteúdo da tabela antes de adicionar novas linhas
+    tabela.innerHTML = '';
+
+    contribuicoes.forEach(function(contribuicao) {
+
+console.log("remuneracaoAposAbatimento:", remuneracaoAposAbatimento); // Log da remuneração devida
+
+        var debito = contribuicao.percentual * remuneracaoAposAbatimento;
+        totalDebito += debito;
+
+        var linha = '<tr>' +
+                        '<td>' + contribuicao.nome + '</td>' +
+                        '<td>' + (contribuicao.percentual * 100) + '%' + '</td>' +
+                        '<td>R$ ' + debito.toFixed(2) + '</td>' +
+                    '</tr>';
+        tabela.innerHTML += linha;
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Dados dos percentuais de tipo de obra
+var percentuaisTipoObra = {
+    "Alvenaria": 0.2,
+    "Madeira": 0.15,
+    "Mista": 0.15
+};
+
+function calcularPercentualTipoObra(tipoObra) {
+    return percentuaisTipoObra[tipoObra] || "ERRO"; // Retorna "ERRO" se o tipo de obra não for encontrado
+}
+
+
+
+
+var percentuaisCategoria = {
+    "Obra Nova": 1,
+    "Acrescimo": 1,
+    "Reforma": 0.35,
+    "Demolicao": 0.1
+};
+
+
+
+
+
+
+
+
+
+
+
+
+        // Dados dos valores VAU por categoria
+        var valoresVAU = {
+            "Residencial Unifamiliar": 2884.27,
+            "Residencial Multifamiliar": 2460.38,
+            "Comercial salas e lojas": 2826.16,
+            "Galpao industrial": 1270.74
+        };
+
+        // Tabela de fatores sociais
+        var tabelaFatorSocial = [
+            { min: 0, max: 100, fator: 0.2 },
+            { min: 100.01, max: 200, fator: 0.4 },
+            { min: 200.01, max: 300, fator: 0.55 },
+            { min: 300.01, max: 400, fator: 0.7 },
+            { min: 400.01, max: 999999, fator: 0.9 }
+        ];
+
+        function calcularFatorSocial(area) {
+            for (var i = 0; i < tabelaFatorSocial.length; i++) {
+                if (area > tabelaFatorSocial[i].min && area <= tabelaFatorSocial[i].max) {
+                    return tabelaFatorSocial[i].fator;
+                }
+            }
+            return ""; // Retorna uma string vazia se a área não se encaixar em nenhum intervalo
+        }
+
+
+
+
+
+
+// Tabela de percentuais por tipo de destinacao e remuneracao
+var tabelaPercentuais = {
+    "Residencial Unifamiliar": {"sim": 0.0491, "nao": 0},
+    "Residencial Multifamiliar": {"sim": 0.065, "nao": 0},
+    "Comercial salas e lojas": {"sim": 0.0878, "nao": 0},
+    "Galpao industrial": {"sim": 0.0308, "nao": 0}
+};
+
+function calcularPercentualRemuneracao() {
+    var destinacao = document.getElementById('destinacao').value;
+    var remuneracaoUsinado = document.querySelector('input[name="remuneracaoUsinado"]:checked').value;
+    var percentual = tabelaPercentuais[destinacao][remuneracaoUsinado];
+    return percentual || 0; // Retorna 0 se não houver correspondência
+}
+
+
+
+
+
+
+
+
+function calcularPercentualAplicacao() {
+    var remuneracaoUsinado = document.querySelector('input[name="remuneracaoUsinado"]:checked').value;
+    var categoria = document.getElementById('categoria').value;
+    var percentualAplicacao = remuneracaoUsinado === 'sim' ? percentuaisCategoria[categoria] : 0;
+    return percentualAplicacao || 0; // Retorna 0 se não houver correspondência
+}
+
+
+
+
+
+
+
+
+function calcularPercentualAjuste() {
+    var remuneracaoUsinado = document.querySelector('input[name="remuneracaoUsinado"]:checked').value;
+    var percentualAjuste = remuneracaoUsinado === 'sim' ? 0.05 : 0;
+    return percentualAjuste;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Correção na função calcularRemuneracaoUsinado
+function calcularRemuneracaoUsinado(custoObra) {
+    // Recupera os percentuais
+    var percentualRemuneracao = parseFloat(calcularPercentualRemuneracao());
+    var percentualAplicacao = parseFloat(calcularPercentualAplicacao());
+    var percentualAjuste = parseFloat(calcularPercentualAjuste());
+    
+    // Converte custoObra para um número
+    var custoObraNum = parseFloat(custoObra);
+
+    // Calcula a remuneração por uso de usinado
+    var remuneracaoUsinado = percentualRemuneracao * percentualAplicacao * percentualAjuste * custoObraNum;
+
+    // Retorna a remuneração por uso de usinado
+    console.log("remuneracaoUsinado:", remuneracaoUsinado); // Log da remuneracaoUsinado
+
+
+    return remuneracaoUsinado;
+}
+
+
+
+
+function calcularRemuneracaoAposAbatimento(custoObra) {
+    // Obtém o valor da remuneração devida da variável global
+    var remuneracaoDevida = parseFloat(document.getElementById('remuneracaoDevida').textContent.replace('Remuneração devida: R$ ', ''));
+    console.log("Remuneração devida:", remuneracaoDevida); // Log da remuneração devida
+
+    // Verifica se o seletor para remuneração por uso de usinado está marcado como "sim"
+    var remuneracaoUsinado = 0;
+    if (document.querySelector('input[name="remuneracaoUsinado"]:checked').value === 'sim') {
+        // Se sim, calcula a remuneração por uso de usinado
+        remuneracaoUsinado = parseFloat(calcularRemuneracaoUsinado(custoObra));
+    }
+    console.log("Remuneração por uso de usinado:", remuneracaoUsinado); // Log da remuneração por uso de usinado
+
+    // Calcula a remuneração após o abatimento
+    var remuneracaoAposAbatimento = remuneracaoDevida - remuneracaoUsinado;
+
+  console.log("Remuneração devida:", remuneracaoDevida); // Log da remuneração devida
+    console.log("Remuneração após abatimento:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+
+    // Retorna a remuneração após o abatimento
+    return remuneracaoAposAbatimento.toFixed(2); // Retorna o valor formatado com duas casas decimais
+}
+
+
+
+
+
+
+
+        function calcular() {
+
+
+            var areaTotal = parseFloat(document.getElementById('areaTotal').value);
+            var destinacao = document.getElementById('destinacao').value;
+
+            var aliquota;
+            if (destinacao === 'Residencial Unifamiliar') {
+                aliquota = areaTotal <= 1000 ? 0.89 : 0.85;
+            } else if (destinacao === 'Residencial Multifamiliar') {
+                aliquota = areaTotal <= 1000 ? 0.9 : 0.86;
+            } else if (destinacao === 'Comercial salas e lojas') {
+                aliquota = areaTotal <= 3000 ? 0.86 : 0.83;
+            } else if (destinacao === 'Galpao industrial') {
+                aliquota = 0.95;
+            } else {
+                aliquota = 1; // Valor padrão caso não se encaixe em nenhuma categoria
+            }
+
+            var quadra = parseFloat(document.getElementById('quadra').value);
+            var quadraCobertura = document.getElementById('quadraCobertura').value;
+            var piscina = parseFloat(document.getElementById('piscina').value);
+            var piscinaCobertura = document.getElementById('piscinaCobertura').value;
+            var garagem = parseFloat(document.getElementById('garagem').value);
+            var garagemCobertura = document.getElementById('garagemCobertura').value;
+
+            var redutorCoberto = 0.5;
+            var redutorDescoberto = 0.25;
+
+            var resultadoQuadra = quadra - (quadra * (quadraCobertura === 'Coberto' ? redutorCoberto : redutorDescoberto));
+            var resultadoPiscina = piscina - (piscina * (piscinaCobertura === 'Coberto' ? redutorCoberto : redutorDescoberto));
+            var resultadoGaragem = garagem - (garagem * (garagemCobertura === 'Coberto' ? redutorCoberto : redutorDescoberto));
+
+            var resultadoTotal = areaTotal * aliquota - resultadoQuadra - resultadoPiscina - resultadoGaragem;
+
+            // Calcula o Valor VAU com base na categoria selecionada
+            var valorVAU = valoresVAU[destinacao] || 0; // Usa 0 como valor padrão se a categoria não for encontrada
+
+            // Calcula o Custo da Obra por Destinação
+            var custoObra = valorVAU * resultadoTotal;
+    var remuneracaoAposAbatimento = parseFloat(calcularRemuneracaoAposAbatimento(custoObra)); // Convertido para número
+  calcularDebitos(remuneracaoAposAbatimento); 
+    console.log("Remuneração após abatimentofim:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+
+            // Calcula o Fator Social
+            var fatorSocial = calcularFatorSocial(areaTotal);
+
+            // Calcula a alíquota do Valor NF Pré-Moldado ou de Pré-Fabricado
+            var valorNF = parseFloat(document.getElementById('valorNF').value);
+            var aliquotaNF;
+            if (valorNF >= custoObra * 0.4) {
+                aliquotaNF = 0.3;
+            } else {
+                aliquotaNF = 1;
+            }
+
+
+
+
+
+var tipoObra = document.getElementById('tipoObra').value;
+
+var percentualObra = calcularPercentualTipoObra(tipoObra);
+
+
+var categoria = document.getElementById('categoria').value;
+
+var percentualCategoria = calcularPercentualCategoria(categoria);
+
+
+
+
+var remuneracaoDevida = custoObra * fatorSocial * aliquotaNF * percentualObra * percentualCategoria; // Calcule a Remuneração devida
+
+
+    var percentualRemuneracao = calcularPercentualRemuneracao();
+
+
+
+
+
+
+
+
+
+
+
+ // Calcula o Fator de Ajuste (contbraz) com base na areaTotal
+    var areaTotal = parseFloat(document.getElementById('areaTotal').value);
+    var fatorAjuste = (areaTotal <= 350) ? 0.5 : 0.7; // Use a lógica adequada para determinar o fator de ajuste
+
+    // Calcula o Valor Mão de Obra Necessário (MEI)
+
+    var valorMaoObraNecessario = remuneracaoAposAbatimento * fatorAjuste;
+
+    // Calcula o Total a Recolher
+    var totalARecolher = valorMaoObraNecessario * 0.2;
+
+
+
+
+
+
+
+
+
+
+
+function calcularDecadenciaTotal() {
+    var inicioObra = new Date(document.getElementById('inicioObra').value);
+    var fimObra = new Date(document.getElementById('fimObra').value);
+    var hoje = new Date();
+    var cincoAnosAtras = new Date();
+    cincoAnosAtras.setFullYear(hoje.getFullYear() - 5);
+
+    var decadenciaTotal = "";
+    if (inicioObra && fimObra) {
+        decadenciaTotal = fimObra < cincoAnosAtras ? "Sim" : "Nao";
+    }
+    
+    // Imprime o valor de decadenciaTotal no console
+    console.log("Decadência Total: ", decadenciaTotal);
+
+    return decadenciaTotal; // Retorna o valor da decadência total
+}
+
+
+
+
+
+
+
+
+
+// Defina a função calcularDecadenciaTotal para retornar "sim" ou "nao" com base na lógica apropriada
+function calcularDecadenciaTotal() {
+    var inicioObra = new Date(document.getElementById('inicioObra').value);
+    var fimObra = new Date(document.getElementById('fimObra').value);
+    var hoje = new Date();
+    var cincoAnosAtras = new Date();
+    cincoAnosAtras.setFullYear(hoje.getFullYear() - 5);
+
+    if (inicioObra && fimObra && fimObra < cincoAnosAtras) {
+        return "sim"; // Se a condição for verdadeira, a obra pode estar sujeita a decadência total
+    } else {
+        return "nao"; // Se não, não há decadência total
+    }
+}
+
+// Chame a função apenas uma vez para preencher o valor inicial
+var decadenciaTotalInicial = calcularDecadenciaTotal();
+if (decadenciaTotalInicial === "sim") {
+    document.getElementById('decadenciaTotal').textContent = 'Possível Decadência Total: Sim';
+}
+
+// Adicione um listener de evento para calcular a decadência total quando a data de fim da obra é alterada
+document.getElementById('fimObra').addEventListener('change', function() {
+    var decadenciaTotal = calcularDecadenciaTotal();
+    if (decadenciaTotal === "sim") {
+        document.getElementById('decadenciaTotal').textContent = 'Possível Decadência Total: Sim';
+    } else {
+        document.getElementById('decadenciaTotal').textContent = 'Possível Decadência Total: Não';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+function calcularPercentualCategoria(categoria) {
+    return percentuaisCategoria[categoria] || "ERRO"; // Retorna "ERRO" se a categoria não for encontrada
+}
+
+
+
+
+
+            // Calcula o valor de pré-moldado para desconto de 30%
+            var valorDesconto = (custoObra * 0.4) - valorNF ;
+
+            // Atualiza o resultado total na página
+            //document.getElementById('resultado').textContent = 'O resultado total é: ' + resultadoTotal.toFixed(2);
+
+            // Atualiza o Valor VAU na página
+            //document.getElementById('valorVAU').textContent = 'Valor VAU: ' + valorVAU.toFixed(2);
+
+
+
+
+
+
+
+            // Atualiza o Custo da Obra por Destinação na página
+
+            document.getElementById('custoObra').textContent = 'Custo Total da Obra: ' + custoObra.toFixed(2);
+
+            // Atualiza o Fator Social na página
+            //document.getElementById('fatorSocial').textContent = 'Fator Social: ' + (fatorSocial ? fatorSocial.toFixed(2) : "Não aplicável");
+
+            // Atualiza a alíquota do Valor NF Pré-Moldado ou de Pré-Fabricado na página
+            //document.getElementById('aliquotaNF').textContent = 'Alíquota NF Pré-Moldado ou de Pré-Fabricado: ' + aliquotaNF.toFixed(2);
+
+
+            // Atualiza o valor de pré-moldado para desconto de 30% na página
+            // document.getElementById('valorDesconto').textContent = 'Valor de pré-moldado necessario para desconto de 30%: R$ ' + valorDesconto.toFixed(2);
+
+
+
+
+
+
+
+
+//document.getElementById('percentualObra').textContent = 'Percentual de Tipo de Obra: ' + percentualObra;
+
+
+//document.getElementById('percentualCategoria').textContent = 'Percentual de Categoria: ' + percentualCategoria;
+
+
+
+document.getElementById('remuneracaoDevida').textContent = 'Remuneração devida: R$ ' + remuneracaoDevida.toFixed(2);
+document.getElementById('remuneracaoDevida').style.display = 'none';
+
+
+
+
+    // document.getElementById('percentualUsinado').textContent = 'Percentual por uso de usinado: ' + percentualRemuneracao.toFixed(4);
+
+
+// document.getElementById('percentualAplicacao').textContent = 'Percentual de aplicação: ' + calcularPercentualAplicacao().toFixed(4);
+// document.getElementById('percentualAjuste').textContent = 'Percentual de ajuste: ' + calcularPercentualAjuste().toFixed(4);
+
+   //  document.getElementById('remuneracaoUsinado').textContent = 'Remuneração por uso de usinado: R$ ' + calcularRemuneracaoUsinado(custoObra).toFixed(2);
+  //   document.getElementById('remuneracaoAposAbatimento').textContent = 'Remuneração após abatimento: R$ ' + remuneracaoAposAbatimento.toFixed(2);
+
+document.getElementById('totalDebito').textContent = 'R$ ' + totalDebito.toFixed(2);
+
+
+    // Atualiza o elemento HTML do total de débito
+    document.getElementById('totalDebito').textContent = 'R$ ' + totalDebito.toFixed(2);
+
+
+
+
+   document.getElementById('fatorAjuste').textContent = fatorAjuste.toFixed(2);
+    document.getElementById('valorMaoObraNecessario').textContent = isNaN(valorMaoObraNecessario) ? "N/A" : valorMaoObraNecessario.toFixed(2);
+    document.getElementById('totalARecolher').textContent = isNaN(totalARecolher) ? "N/A" : totalARecolher.toFixed(2);
+
+        }
+
+        // Chama a função calcular inicialmente para preencher os resultados
+    console.log("Remuneração após abatimento:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+        calcular();
+        calcular();
+
+    console.log("Remuneração após abatimentofim:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
