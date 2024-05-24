@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
 
 
 
@@ -11,17 +9,6 @@
 
     <title>Calculadora INSS de Obras SERO - Pessoa Fisica</title>
     <style>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -41,18 +28,6 @@
         #valorMaoObraNecessario {
             display: none;
         }
-
-
-
-            width: 100%;
-            max-width: 680px; /* Reduzido para considerar o espaçamento de 20px (10px em cada lado) */
-        }
-
-
-
-
-
-
 
         body {
             font-family: Roboto, Arial, sans-serif; /* Roboto como primeira opção, Arial ou uma fonte sans-serif genérica como alternativa */
@@ -287,7 +262,7 @@
 <p id="percentualObra"></p>
 <p id="percentualCategoria"></p>
 <p id="remuneracaoDevida"></p>
-<p id="totalARecolherFormatted"></p>
+
 
 
 
@@ -327,68 +302,35 @@
     <p id="custoObra"></p>
 
 
+
+
 <hr />
-<div style="display: flex; justify-content: space-between;">
-    <div style="width: 50%;">
-        <table>
-            <caption><h3>Tabela de Cálculo Guia de Contribuições</h3></caption>
-            <thead>
-                <tr>
-                    <th>Contribuições</th>
-                    <th>Percentual</th>
-                    <th>Débito</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaContribuicoes">
-                <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2"><h4>Total a pagar INSS obra:</h4></td>
-
-
-
-
-                    <td id="totalDebito" style="color: red;"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div style="width: 50%; text-align: right;">
-        <div id="myPlot" style="width: 350px; height: 350px;"></div>
-    </div>
-</div>
-
-
-
-
 <table>
-  <tr>
-  </tr>
-  <tr>
-    <td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <p><h4><span>Total a pagar com auxilio ContBraz: </span><span style="color: #23d400;">R$</span> <span id="totalARecolher" style="color: #23d400;"></span></h4></p>
-    </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentual de desconto: 10%</td>
-  </tr>
+    <caption><strong>Tabela de Cálculo Guia de Contribuições</strong></caption>
+    <thead>
+        <tr>
+            <th>Contribuições</th>
+            <th>Percentual</th>
+            <th>Débito</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaContribuicoes">
+        <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2"><h4>Total a pagar INSS obra:</h4></td>
+            <td id="totalDebito" style="color: red;"></td>
+        </tr>
+    </tfoot>
 </table>
+
+
+
+
+
+<p><h4><span>Total a pagar com auxilio ContBraz: </span><span style="color: #23d400;">R$</span> <span id="totalARecolher" style="color: #23d400;"></span></h4></p>
+
 
 
     <p> <span id="fatorAjuste"></span></p>
@@ -396,12 +338,6 @@
 
   
 
-
-      <p><h4><span>Total a pagar com auxilio ContBraz: </span><span style="color: #23d400;">R$</span> <span id="totalARecolherFormatted" style="color: #23d400;"></span></h4></p>
-
-
-
-      <p><h4><span>Total a pagar com auxilio ContBraz: </span><span style="color: #23d400;">R$</span> <span id="totalARecolherFormatted" style="color: #23d400;"></span></h4></p>
 
 
 
@@ -450,10 +386,10 @@ var totalDebito = 0;
 
 function calcularDebitos(remuneracaoAposAbatimento) {
     var contribuicoes = [
-        { nome: "CP Patronal &nbsp; - Empregados", percentual: 0.2 },
-        { nome: "CP Segurado  - Empregados", percentual: 0.08 },
-        { nome: "CP Patronal &nbsp; - GILRAT", percentual: 0.03 },
-        { nome: "CP Terceiros - Salário Educação&nbsp;", percentual: 0.025 },
+        { nome: "CP Patronal - Empregados", percentual: 0.2 },
+        { nome: "CP Segurados - Empregados", percentual: 0.08 },
+        { nome: "CP Patronal - GILRAT", percentual: 0.03 },
+        { nome: "CP Terceiros - Salário Educação", percentual: 0.025 },
         { nome: "CP Terceiros - INCRA", percentual: 0.002 },
         { nome: "CP Terceiros - SEBRAE", percentual: 0.006 },
         { nome: "CP Terceiros - SESI", percentual: 0.015 },
@@ -681,66 +617,7 @@ function calcularRemuneracaoAposAbatimento(custoObra) {
 
 
 
-
-
-function atualizarGrafico() {
-    var totalARecolherValue = parseFloat(document.getElementById('totalARecolher').textContent.replace('R$ ', ''));
- var totalDebitoValue = parseFloat(document.getElementById('totalDebito').textContent.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
-
-    // Dados para o gráfico de barras verticais
-    const data1 = [{
-        x: ['Com auxilio ContBraz', 'Valor total a pagar'],
-        y: [totalARecolherValue, totalDebitoValue],
-        type: 'bar',
-        marker: {
-            color: ['#23d400', 'red'] // Azul para "Com auxilio ContBraz" e vermelho para "Valor total a pagar"
-        }
-    }];
-
-    // Layout para o gráfico de barras verticais
-    const layout1 = {
-        title: 'Comparação de Valores',
-        xaxis: {
-            title: ''
-        },
-        yaxis: {
-            title: 'R$'
-        }
-    };
-
-    // Atualiza o gráfico
-    Plotly.newPlot('myPlot', data1, layout1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         function calcular() {
-
-
-
-
-
- atualizarGrafico();
-
 
 
             var areaTotal = parseFloat(document.getElementById('areaTotal').value);
@@ -794,10 +671,6 @@ function atualizarGrafico() {
                 aliquotaNF = 0.3;
             } else {
                 aliquotaNF = 1;
-
-
-
-
             }
 
 
@@ -844,10 +717,8 @@ var remuneracaoDevida = custoObra * fatorSocial * aliquotaNF * percentualObra * 
 
 
 
-var totalARecolherValue = parseFloat(document.getElementById('totalARecolher').textContent.replace('R$ ', ''));
-var totalARecolherFormatted = totalARecolherValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-document.getElementById('totalARecolher').textContent = totalARecolherFormatted;
+
 
 
 
@@ -870,8 +741,6 @@ function calcularDecadenciaTotal() {
     console.log("Decadência Total: ", decadenciaTotal);
 
     return decadenciaTotal; // Retorna o valor da decadência total
-
-
 }
 
 
@@ -948,10 +817,7 @@ function calcularPercentualCategoria(categoria) {
 
             // Atualiza o Custo da Obra por Destinação na página
 
-
-
-
-document.getElementById('custoObra').textContent = 'Custo Total da Obra: ' + custoObra.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+            document.getElementById('custoObra').textContent = 'Custo Total da Obra: ' + custoObra.toFixed(2);
 
             // Atualiza o Fator Social na página
             //document.getElementById('fatorSocial').textContent = 'Fator Social: ' + (fatorSocial ? fatorSocial.toFixed(2) : "Não aplicável");
@@ -998,13 +864,6 @@ document.getElementById('totalDebito').textContent = 'R$ ' + totalDebito.toFixed
     // Atualiza o elemento HTML do total de débito
     document.getElementById('totalDebito').textContent = 'R$ ' + totalDebito.toFixed(2);
 
-        document.getElementById('totalDebito').textContent = 'R$ ' + Number(totalDebito.toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
-
-
-
-
-
 
 
 
@@ -1016,9 +875,34 @@ document.getElementById('totalDebito').textContent = 'R$ ' + totalDebito.toFixed
 
         // Chama a função calcular inicialmente para preencher os resultados
     console.log("Remuneração após abatimento:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+        calcular();
+        calcular();
 
-        calcular();
-        calcular();
+    console.log("Remuneração após abatimentofim:", remuneracaoAposAbatimento); // Log da remuneração após abatimento
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
