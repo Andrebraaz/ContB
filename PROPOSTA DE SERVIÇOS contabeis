@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Orçamento Contabilidade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .container input, .container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .funcionario {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Solicitação Orçamento Contabilidade</h2>
+        <input type="text" id="nomeSolicitante" placeholder="Nome Solicitante" required>
+        <input type="number" id="telefoneSolicitante" placeholder="Telefone Solicitante" required>
+        <hr>
+        <form id="folhaPontoForm">
+            <div id="funcionarios">
+                <div class="funcionario">
+                    <input type="text" name="Nome_Social:" placeholder="Nome Social" required>
+                    <input type="number" name="diasTrabalhados" placeholder="Faturamento Mensal" required>
+                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionarios" required>
+                    <input type="number" name="horasDescontadas" placeholder="Regime Atual" required>
+                </div>
+            </div>
+            <button type="button" onclick="adicionarFuncionario()">Mais de uma Empresa? Clique Aqui!</button>
+            <button type="button" onclick="enviarDados()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function adicionarFuncionario() {
+            const funcionarioHTML = `
+                <div class="funcionario">
+                    <input type="text" name="Nome_Social:" placeholder="Nome Social" required>
+                    <input type="number" name="diasTrabalhados" placeholder="Faturamento Mensal" required>
+                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionarios" required>
+                    <input type="number" name="horasDescontadas" placeholder="Regime Atual" required>
+                </div>`;
+            document.getElementById('funcionarios').insertAdjacentHTML('beforeend', funcionarioHTML);
+        }
+
+        function enviarDados() {
+            const nomeSolicitante = document.getElementById('nomeSolicitante').value;
+            const telefoneSolicitante = document.getElementById('telefoneSolicitante').value;
+            let mensagem = `Solicitação Orçamento Contabilidade:\nNome do Solicitante: ${nomeSolicitante}\nTelefone do Solicitante: ${telefoneSolicitante}\n`;
+
+            const funcionarios = document.querySelectorAll('.funcionario');
+            funcionarios.forEach(funcionario => {
+                const nome = funcionario.querySelector('input[name="Nome_Social:"]').value;
+                const diasTrabalhados = funcionario.querySelector('input[name="diasTrabalhados"]').value;
+                const horasExtras = funcionario.querySelector('input[name="horasExtras"]').value;
+                const horasDescontadas = funcionario.querySelector('input[name="horasDescontadas"]').value;
+
+                if (nome && diasTrabalhados && horasExtras && horasDescontadas) {
+                    mensagem += `\nNome: ${nome}\nFaturamento Mensal: ${diasTrabalhados}\nQuantidade Funcionários: ${horasExtras}\nRegime Atual: ${horasDescontadas}\n`;
+                }
+            });
+
+            const numeroWhatsApp = '554432444085';
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
