@@ -43,9 +43,9 @@
         <form id="folhaPontoForm">
             <div id="funcionarios">
                 <div class="funcionario">
-                    <input type="text" name="Nome_Social:" placeholder="Nome Social" required>
+                    <input type="text" name="Nome_Social" placeholder="Nome Social" required>
                     <input type="number" name="diasTrabalhados" placeholder="Faturamento Mensal" required>
-                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionarios" required>
+                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionários" required>
                     <input type="number" name="horasDescontadas" placeholder="Regime Atual" required>
                 </div>
             </div>
@@ -58,9 +58,9 @@
         function adicionarFuncionario() {
             const funcionarioHTML = `
                 <div class="funcionario">
-                    <input type="text" name="Nome_Social:" placeholder="Nome Social" required>
+                    <input type="text" name="Nome_Social" placeholder="Nome Social" required>
                     <input type="number" name="diasTrabalhados" placeholder="Faturamento Mensal" required>
-                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionarios" required>
+                    <input type="number" name="horasExtras" placeholder="Quantidade Funcionários" required>
                     <input type="number" name="horasDescontadas" placeholder="Regime Atual" required>
                 </div>`;
             document.getElementById('funcionarios').insertAdjacentHTML('beforeend', funcionarioHTML);
@@ -73,13 +73,13 @@
 
             const funcionarios = document.querySelectorAll('.funcionario');
             funcionarios.forEach(funcionario => {
-                const nome = funcionario.querySelector('input[name="Nome_Social:"]').value;
+                const nome = funcionario.querySelector('input[name="Nome_Social"]').value;
                 const diasTrabalhados = funcionario.querySelector('input[name="diasTrabalhados"]').value;
                 const horasExtras = funcionario.querySelector('input[name="horasExtras"]').value;
                 const horasDescontadas = funcionario.querySelector('input[name="horasDescontadas"]').value;
 
                 if (nome && diasTrabalhados && horasExtras && horasDescontadas) {
-                    mensagem += `\nNome: ${nome}\nFaturamento Mensal: ${diasTrabalhados}\nQuantidade Funcionários: ${horasExtras}\nRegime Atual: ${horasDescontadas}\n`;
+                    mensagem += `\nNome Social: ${nome}\nFaturamento Mensal: ${diasTrabalhados}\nQuantidade Funcionários: ${horasExtras}\nRegime Atual: ${horasDescontadas}\n`;
                 }
             });
 
