@@ -68,28 +68,43 @@
 <body>
     <div class="container">
         <h1>Presente PIX</h1>
-        <p>Sua presença será o nosso melhor presente! Mas, caso queira nos presentear de outra forma, aqui está a opção de chave PIX:</p>
-        <img src="https://via.placeholder.com/150" alt="QR Code PIX">
-        <p>Valor Customizável</p>
-        <input type="text" value="pix@exemplo.com" readonly>
-        <button onclick="copyPixKey('pix')">Copiar Chave PIX</button>
-        <p>Contamos com a sua presença para tornar nosso dia ainda mais especial.</p>
-        <p>Por gentileza confirmar o nome de quem está recebendo o PIX: </p>
+        <p>Sua presença já nos é suficiente.
+Mas, caso deseje nos presentear de outra forma, aqui está a opção de chave PIX:"</p>
+
+   <br>
+
+        <img src="https://raw.githubusercontent.com/Andrebraaz/ContB/main/Imagem%20do%20WhatsApp%20de%202024-06-02%20%C3%A0(s)%2020.00.39_71de7020.jpg" alt="QR Code PIX" width="150" height="150">
+
+
+
+
+        <p>Chave Aleatória</p>
+        <input type="text" value="05f2f924-2fb6-4158-a9c4-6088a1bd5771" readonly>
+<button onclick="copyPixKey()">Copiar Chave PIX</button>
+
+    <br>
+
+  <br>
+
+        <p>Por gentileza confirmar recebedor: </p>
         <p>"ANDRE FERNANDO DA SILVA BRAZ".</p>
+
+
+<p> Banco Inter.</p>
+
         <div class="footer">
             <p>Com carinho,</p>
             <p>Isabela & André</p>
         </div>
     </div>
 
-    <script>
-        function copyPixKey(pixId) {
-            var copyText = document.getElementById(pixId);
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(copyText.value);
-            alert("Chave PIX copiada: " + copyText.value);
-        }
-    </script>
+<script>
+    function copyPixKey() {
+        var copyText = "05f2f924-2fb6-4158-a9c4-6088a1bd5771";
+        navigator.clipboard.writeText(copyText);
+        alert("Chave PIX aleatória copiada: " + copyText);
+    }
+</script>
+
 </body>
 </html>
