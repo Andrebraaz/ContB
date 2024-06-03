@@ -2,15 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Isabela e André (07/09/2024) | iCasei</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Rollgates+Fabulous&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presente PIX | Isabela e André</title>
     <style>
-
-
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #353535;
             color: #fff;
             margin: 0;
@@ -31,68 +27,14 @@
             border: 2px solid #1C1C1C;
         }
         h1 {
-            font-family: 'Arial', sans-serif;
             font-size: 3em;
             color: #EBBF7B;
             margin-bottom: 20px;
         }
-        .details {
-            margin: 20px 0;
-            font-size: 1.2em;
-            color: #fff;
-        }
-        .carousel-container {
-            position: relative;
-            width: 350px;}
-
-
-.carousel {
-    display: flex;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 10px;
-    scrollbar-width: none;
-    flex-wrap: nowrap; /* Impede que os itens quebrem em várias linhas */
-}
-
-
-
-        .carousel::-webkit-scrollbar {
-            display: none;
-        }
-        .carousel-item {
-            flex: none;
-            scroll-snap-align: center;
-            background-color: #454545;
-            border: 2px solid #1C1C1C;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-
-
- 
- 
-
-
-
-            min-width: 250px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .carousel-item:hover {
-            transform: scale(1.05);
-        }
-        .carousel-item img {
-            max-width: 100%;
-            margin-bottom: 10px;
-            border-radius: 10px;
-        }
-        .carousel-item p {
+        p {
             margin: 10px 0;
-            font-weight: bold;
-            font-size: 1.3em;
         }
-        .carousel-item input {
+        input {
             width: 100%;
             padding: 10px;
             border: 1px solid #EBBF7B;
@@ -103,7 +45,7 @@
             color: #fff;
             text-align: center;
         }
-        .carousel-item button {
+        button {
             padding: 10px 20px;
             margin-top: 15px;
             border: none;
@@ -113,7 +55,7 @@
             cursor: pointer;
             font-size: 1em;
         }
-        .carousel-item button:hover {
+        button:hover {
             background-color: #d35400;
             color: #fff;
         }
@@ -121,130 +63,19 @@
             margin-top: 30px;
             color: #fff;
         }
-        .footer p {
-            margin: 5px 0;
-        }
-        ::selection {
-            background: #EBBF7B;
-            color: #353535;
-        }
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #EBBF7B;
-            color: #353535;
-            border: none;
-            padding: 10px;
-            border-radius: 100%;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease-in-out;
-        }
-        .nav-button:hover {
-            background-color: #d35400;
-            color: #fff;
-        }
-        .nav-button.prev {
-            left: -25px;
-        }
-        .nav-button.next {
-            right: -25px;
-        }
-
-
-    #pix500 {
-        width: 200px; /* Ajuste o tamanho conforme necessário */
-    }
-
-
-
-    #pix1000 {
-        width: 200px; /* Ajuste o tamanho conforme necessário */
-    }
-
-
-
-    #pix1500 {
-        width: 200px; /* Ajuste o tamanho conforme necessário */
-    }
-
-
     </style>
 </head>
 <body>
     <div class="container">
-
-
-
-       <h1>Presente PIX</h1>
-
-   <p>Sua presença será o nosso melhor presente! Mas, caso queira nos presentear de outra forma, aqui estão nossas opções de chave PIX:</p>
-
-
-
-     
-        <div class="carousel-container">
-            <button class="nav-button prev" onclick="scrollCarousel(-1)">‹</button>
-            <div class="carousel" id="carousel">
-                <div class="carousel-item">
-                    <img src="https://via.placeholder.com/150" alt="QR Code PIX R$500">
-                    <p>Valor Customizável</p>
-<input type="text" value="pix500@exemplo.com" id="pix500" readonly ></p>
-
-                    <button onclick="copyPixKey('pix500')">Copiar Chave PIX</button>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://via.placeholder.com/150" alt="QR Code PIX R$1000">
-                    <p>Valor: R$1.000</p>
-                    <input type="text" value="pix1000@exemplo.com" id="pix1000" readonly></p>
-                    <button onclick="copyPixKey('pix1000')">Copiar Chave PIX</button>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://via.placeholder.com/150" alt="QR Code PIX R$1500">
-                    <p>Valor: R$100.000</p>
-                    <input type="text" value="pix1500@exemplo.com" id="pix1500" readonly></p>
-                    <button onclick="copyPixKey('pix1500')">Copiar Chave PIX</button>
-                </div>
-
-
-                <div class="carousel-item">
-                    <img src="https://via.placeholder.com/150" alt="QR Code PIX R$1500">
-                    <p>Valor: R$1.000.000</p>
-                    <input type="text" value="pix1500@exemplo.com" id="pix1500" readonly></p>
-                    <button onclick="copyPixKey('pix1500')">Copiar Chave PIX</button>
-                </div>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-            <button class="nav-button next" onclick="scrollCarousel(1)">›</button>
-        </div>
-
+        <h1>Presente PIX</h1>
+        <p>Sua presença será o nosso melhor presente! Mas, caso queira nos presentear de outra forma, aqui está a opção de chave PIX:</p>
+        <img src="https://via.placeholder.com/150" alt="QR Code PIX">
+        <p>Valor Customizável</p>
+        <input type="text" value="pix@exemplo.com" readonly>
+        <button onclick="copyPixKey('pix')">Copiar Chave PIX</button>
         <p>Contamos com a sua presença para tornar nosso dia ainda mais especial.</p>
-
-
-
-        <p>Por gentileza confirmar o nome de quem esta recebendo o PIX: </p>
-
-  <p>"ANDRE FERNANDO DA SILVA BRAZ".</p>
-
-
-
-
-
+        <p>Por gentileza confirmar o nome de quem está recebendo o PIX: </p>
+        <p>"ANDRE FERNANDO DA SILVA BRAZ".</p>
         <div class="footer">
             <p>Com carinho,</p>
             <p>Isabela & André</p>
@@ -255,19 +86,9 @@
         function copyPixKey(pixId) {
             var copyText = document.getElementById(pixId);
             copyText.select();
-            copyText.setSelectionRange(0, 99999); // Para dispositivos móveis
+            copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
             alert("Chave PIX copiada: " + copyText.value);
-        }
-
-        function scrollCarousel(direction) {
-            var carousel = document.getElementById('carousel');
-            var scrollAmount = 300;
-            if (direction === 1) {
-                carousel.scrollLeft += scrollAmount;
-            } else {
-                carousel.scrollLeft -= scrollAmount;
-            }
         }
     </script>
 </body>
