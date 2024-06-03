@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabela e André (07/09/2024) | iCasei</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Rollgates+Fabulous&display=swap" rel="stylesheet">
-     <style>
+    <style>
+
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #353535;
@@ -18,7 +20,7 @@
             height: 100vh;
         }
         .container {
-            max-width: 800px;
+            max-width: 350px;
             margin: 20px;
             background-color: #353535;
             padding: 30px;
@@ -26,9 +28,6 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             border: 2px solid #1C1C1C;
-            display: flex;
-            flex-direction: column; /* Para organizar verticalmente */
-            align-items: center;
         }
         h1 {
             font-family: 'Rollgates Fabulous', cursive;
@@ -36,24 +35,28 @@
             color: #EBBF7B;
             margin-bottom: 20px;
         }
-        p {
+        .details {
+            margin: 20px 0;
             font-size: 1.2em;
+            color: #fff;
         }
         .carousel-container {
             position: relative;
-            width: 100%;
-            overflow: hidden; /* Adicionado para esconder conteúdo fora da tela */
-        }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 10px;
-            scrollbar-width: none;
-            flex-wrap: wrap; /* Para que os itens se ajustem verticalmente */
-            justify-content: center; /* Para centralizar os itens */
-        }
+            width: 350px;}
+
+
+.carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+    flex-wrap: nowrap; /* Impede que os itens quebrem em várias linhas */
+}
+
+
+
         .carousel::-webkit-scrollbar {
             display: none;
         }
@@ -65,9 +68,15 @@
             border-radius: 10px;
             padding: 20px;
             text-align: center;
+
+
+ 
+ 
+
+
+
             min-width: 250px;
             transition: transform 0.3s ease-in-out;
-            margin: 10px; /* Espaçamento entre os itens */
         }
         .carousel-item:hover {
             transform: scale(1.05);
@@ -126,7 +135,7 @@
             color: #353535;
             border: none;
             padding: 10px;
-            border-radius: 50%;
+            border-radius: 100%;
             cursor: pointer;
             font-size: 1.2em;
             transition: background-color 0.3s ease-in-out;
@@ -136,28 +145,30 @@
             color: #fff;
         }
         .nav-button.prev {
-            left: -40px;
+            left: -25px;
         }
         .nav-button.next {
-            right: -40px;
-        }
-        #pix500,
-        #pix1000,
-        #pix1500 {
-            width: 200px; /* Ajuste o tamanho conforme necessário */
+            right: -25px;
         }
 
-        @media screen and (max-width: 600px) { /* Define as regras para telas menores */
-            .carousel-item {
-                min-width: 150px;
-            }
-            .nav-button.prev {
-                left: 0;
-            }
-            .nav-button.next {
-                right: 0;
-            }
-        }
+
+    #pix500 {
+        width: 200px; /* Ajuste o tamanho conforme necessário */
+    }
+
+
+
+    #pix1000 {
+        width: 200px; /* Ajuste o tamanho conforme necessário */
+    }
+
+
+
+    #pix1500 {
+        width: 200px; /* Ajuste o tamanho conforme necessário */
+    }
+
+
     </style>
 </head>
 <body>
@@ -171,7 +182,8 @@
 
 
 
- 
+     
+        <div class="carousel-container">
             <button class="nav-button prev" onclick="scrollCarousel(-1)">‹</button>
             <div class="carousel" id="carousel">
                 <div class="carousel-item">
@@ -206,7 +218,9 @@
 
 
 
- 
+
+
+            </div>
 
 
 
