@@ -49,22 +49,22 @@
     }
     #pixValueGameOver {
       margin-top: 1vw; /* Ajuste para 1% da altura da tela */
-      font-size: 3vw; /* Ajuste para 1.5% da largura da tela */
+      font-size: 4vw; /* Ajuste para 1.5% da largura da tela */
     }
   </style>
 </head>
 <body>
 <div id="gameOverScreen">
-  <div id="gameOverMessage" style="font-size: 8vw;">Game Over</div>
+<div id="gameOverMessage" style="font-size: 8vw; text-align: center; margin: 2vw;">Game Over</div>
 
   <br>
-  <button id="retryButton" style="font-size: 3vw;">Tentar Novamente</button>
+  <button id="retryButton" style="font-size: 4vw;">Tentar Novamente</button>
   <br>
   <img src="https://raw.githubusercontent.com/Andrebraaz/ContB/main/download.png" alt="Game Over" />
   <br>
   <div id="pixValueGameOver"></div>
   <br>
-  <button id="copyButton" style="font-size: 3vw;">Copiar valor do PIX3</button>
+  <button id="copyButton" style="font-size: 4vw;">Copiar valor do PIX3</button>
 
 </div>
 
@@ -223,7 +223,7 @@
     });
 
     context.fillStyle = 'white';
-    context.font = '2vw Arial'; /* Ajuste o tamanho do texto em relação à largura da tela */
+    context.font = '4vw Arial'; /* Ajuste o tamanho do texto em relação à largura da tela */
     var pixValue = 10000 - score * 200;
     context.fillText('Valor do pix4: ' + pixValue, 10, 25);
   }
