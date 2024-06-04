@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<h1>SNAKE PIX</h1>
+<p>Ao comer as maçãs o valor do PIX, diminui em R$200,00.</p>
+<p style="margin-top: -0.5em;">Boa Sorte, ou não...</p>
+
+
+  <title>SNAKE PIX</title>
+  <meta charset="UTF-8">
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+  canvas {
+    border: 1px solid white;
+  }
+
+
+
+
+  #gameOverScreen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #gameOverScreen img {
+    width: 150px;
+    height: 150px;
+  }
+  #pixValueGameOver {
+    margin-top: 20px;
+  }
+  </style>
+</head>
+<body>
+<div id="gameOverScreen">
+<div id="gameOverMessage" style="font-size: 24px;">Game Over</div>
+
+  <br>
+  <button id="retryButton">Tentar Novamente</button>
+  <br>
+  <img src="https://raw.githubusercontent.com/Andrebraaz/ContB/main/download.png" alt="Game Over" />
+  <br>
+  <div id="pixValueGameOver"></div>
+  <br>
+  <button id="copyButton">Copiar valor do PIX3</button>
+
+</div>
+
+
+
+
+
+
+
+
+<canvas width="400" height="400" id="game"></canvas>
+<div id="pixValue"></div>
+<script>
+var canvas = document.getElementById('game');
+var context = canvas.getContext('2d');
+
+var grid = 16;
+var count = 0;
+
+var snake = {
+  x: 160,
+  y: 160,
+  dx: grid,
+  dy: 0,
+  cells: [],
+  maxCells: 4
+};
+var apple = {
+  x: 320,
+  y: 320
+};
+
+var score = 0;
+var maxScore = 0; // Armazenar o maior valor de pontuação alcançado
+
+var gameOverMessages = [
+  "Desistir: a solução para todos os seus problemas... não.",
+  "Falhar: porque alcançar é superestimado.",
+  "Fracassar antes mesmo de começar: um estilo de vida.",
+  "Desistir agora economiza energia para o fracasso mais tarde.",
+  "Por que tentar quando você pode apenas reclamar do resultado?",
+  "Fracasso: a arte de não atingir seus objetivos de forma espetacular.",
+  "Por que se esforçar quando se pode apenas culpar o destino?",
+  "Quem precisa de sucesso quando se pode ter uma boa desculpa?",
+  "Fracassar: é como ganhar, mas ao contrário.",
+  "Desistir antes de começar: o primeiro passo para a inatividade total."
+];
+
+var usedMessages = []; // Matriz para armazenar as mensagens usadas
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomUniqueMessage() {
+  // Verifica se todas as mensagens foram usadas, se sim, reinicia o array de mensagens usadas
+  if (usedMessages.length === gameOverMessages.length) {
+    usedMessages = [];
+  }
+
+  // Filtra as mensagens que ainda não foram usadas
+  var availableMessages = gameOverMessages.filter(function(message) {
+    return !usedMessages.includes(message);
+  });
+
+  // Seleciona aleatoriamente uma mensagem não utilizada
+  var randomIndex = Math.floor(Math.random() * availableMessages.length);
+  var selectedMessage = availableMessages[randomIndex];
+
+  // Adiciona a mensagem selecionada ao array de mensagens usadas
+  usedMessages.push(selectedMessage);
+
+  return selectedMessage;
+}
+
+function updatePixValue() {
+  var pixValue = 10000 - score * 200;
+ 
+}
+
+function updatePixValueGameOver() {
+  var pixValue = 10000 - maxScore * 200;
+  document.getElementById('pixValueGameOver').innerHTML = "Valor do pix1: " + pixValue;
+}
+
+function showGameOverScreen() {
+  var gameOverScreen = document.getElementById('gameOverScreen');
+  gameOverScreen.style.display = 'flex';
+  var message = getRandomUniqueMessage(); // Obtém uma mensagem única
+  document.getElementById('gameOverMessage').innerText = message; // Exibe a mensagem
+  updatePixValueGameOver();
+}
+
+function loop() {
+  requestAnimationFrame(loop);
+
+  if (++count < 4) {
+    return;
+  }
+
+  count = 0;
+  context.clearRect(0,0,canvas.width,canvas.height);
+
+  snake.x += snake.dx;
+  snake.y += snake.dy;
+
+  if (snake.x < 0) {
+    snake.x = canvas.width - grid;
+  }
+  else if (snake.x >= canvas.width) {
+    snake.x = 0;
+  }
+
+  if (snake.y < 0) {
+    snake.y = canvas.height - grid;
+  }
+  else if (snake.y >= canvas.height) {
+    snake.y = 0;
+  }
+
+  snake.cells.unshift({x: snake.x, y: snake.y});
+
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
+  }
+
+  context.fillStyle = 'red';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
+  context.fillStyle = 'green';
+  snake.cells.forEach(function(cell, index) {
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);
+
+    if (cell.x === apple.x && cell.y === apple.y) {
+      snake.maxCells++;
+      score++;
+      updatePixValue();
+
+      apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+    }
+
+    for (var i = index + 1; i < snake.cells.length; i++) {
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+
+        // Atualizar a pontuação máxima se a pontuação atual for maior que a pontuação máxima anterior
+        if (score > maxScore) {
+          maxScore = score;
+        }
+
+        score = 0;
+        PixValue = 0;
+        updatePixValue();
+        showGameOverScreen();
+      }
+    }
+  });
+
+  context.fillStyle = 'white';
+  context.font = '20px Arial';
+  var pixValue = 10000 - score * 200;
+  context.fillText('Valor do pix4: ' + pixValue, 10, 25);
+}
+
+document.addEventListener('keydown', function(e)
+{
+  if (e.which === 37 && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+  else if (e.which === 38 && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+  else if (e.which === 39 && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+  else if (e.which === 40 && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+});
+
+document.getElementById('copyButton').addEventListener('click', function() {
+  var pixValue = document.getElementById('pixValueGameOver').innerText;
+  navigator.clipboard.writeText(pixValue).then(function() {
+    alert("Valor do PIX copiado para a área de transferência!");
+  }, function() {
+    alert("Erro ao copiar o valor do PIX!");
+  });
+});
+
+document.getElementById('retryButton').addEventListener('click', function() {
+  location.reload(); // Recarrega a página ao clicar no botão "Tentar Novamente"
+});
+
+requestAnimationFrame(loop);
+</script>
+</body>
+
+
+
+
+
+
+
+
+<p>Com carinho,</p>
+<p style="margin-top: -0.5em;">Isabela & André</p>
+
+
+
+
+</html>
