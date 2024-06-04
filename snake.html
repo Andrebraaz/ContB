@@ -296,7 +296,29 @@
     location.reload(); // Recarrega a página ao clicar no botão "Tentar Novamente"
   });
 
+
   requestAnimationFrame(loop);
+
+
+
+
+window.addEventListener('resize', function() {
+  var maxWidth = 100; // Defina o tamanho máximo desejado para a largura
+  var maxHeight = 100; // Defina o tamanho máximo desejado para a altura
+
+  if (window.innerWidth > maxWidth) {
+    window.innerWidth = maxWidth;
+  }
+
+  if (window.innerHeight > maxHeight) {
+    window.innerHeight = maxHeight;
+  }
+});
+
+
+
+
+
 </script>
 </body>
 </html>
