@@ -219,77 +219,76 @@
     context.fillText('Valor do pix4: ' + pixValue, 10, 25);
   }
 
-  document.addEventListener('keydown', function(e)
-{
-  if (e.which === 37 && snake.dx === 0) {
-    snake.dx = -grid;
-    snake.dy = 0;
-  }
-  else if (e.which === 38 && snake.dy === 0) {
-    snake.dy = -grid;
-    snake.dx = 0;
-  }
-  else if (e.which === 39 && snake.dx === 0) {
-    snake.dx = grid;
-    snake.dy = 0;
-  }
-  else if (e.which === 40 && snake.dy === 0) {
-    snake.dy = grid;
-    snake.dx = 0;
-  }
-});
-
-// Adicionando controles de toque para dispositivos móveis
-var touchStartX = 0;
-var touchStartY = 0;
-
-document.addEventListener('touchstart', function(e) {
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-});
-
-document.addEventListener('touchend', function(e) {
-  var touchEndX = e.changedTouches[0].clientX;
-  var touchEndY = e.changedTouches[0].clientY;
-
-  var dx = touchEndX - touchStartX;
-  var dy = touchEndY - touchStartY;
-
-  if (Math.abs(dx) > Math.abs(dy)) {
-    // Movimento horizontal
-    if (dx > 0 && snake.dx === 0) {
-      snake.dx = grid;
-      snake.dy = 0;
-    } else if (dx < 0 && snake.dx === 0) {
+  document.addEventListener('keydown', function(e) {
+    if (e.which === 37 && snake.dx === 0) {
       snake.dx = -grid;
       snake.dy = 0;
-    }
-  } else {
-    // Movimento vertical
-    if (dy > 0 && snake.dy === 0) {
-      snake.dy = grid;
-      snake.dx = 0;
-    } else if (dy < 0 && snake.dy === 0) {
+    } else if (e.which === 38 && snake.dy === 0) {
       snake.dy = -grid;
       snake.dx = 0;
+    } else if (e.which === 39 && snake.dx === 0) {
+      snake.dx = grid;
+      snake.dy = 0;
+    } else if (e.which === 40 && snake.dy === 0) {
+      snake.dy = grid;
+      snake.dx = 0;
     }
-  }
-});
-
-document.getElementById('copyButton').addEventListener('click', function() {
-  var pixValue = document.getElementById('pixValueGameOver').innerText;
-  navigator.clipboard.writeText(pixValue).then(function() {
-    alert("Valor do PIX copiado para a área de transferência!");
-  }, function() {
-    alert("Erro ao copiar o valor do PIX!");
   });
-});
 
-document.getElementById('retryButton').addEventListener('click', function() {
-  location.reload(); // Recarrega a página ao clicar no botão "Tentar Novamente"
-});
+  // Impedir o comportamento padrão de deslizar a tela ao interagir com os controles de toque
+  document.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  });
 
-requestAnimationFrame(loop);
+  document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('touchend', function(e) {
+    var touchEndX = e.changedTouches[0].clientX;
+    var touchEndY = e.changedTouches[0].clientY;
+
+    var dx = touchEndX - touchStartX;
+    var dy = touchEndY - touchStartY;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Movimento horizontal
+      if (dx > 0 && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+      } else if (dx < 0 && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+      }
+    } else {
+      // Movimento vertical
+      if (dy > 0 && snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+      } else if (dy < 0 && snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+      }
+    }
+  });
+
+  document.getElementById('copyButton').addEventListener('click', function() {
+    var pixValue = document.getElementById('pixValueGameOver').innerText;
+    navigator.clipboard.writeText(pixValue).then(function() {
+      alert("Valor do PIX copiado para a área de transferência!");
+    }, function() {
+      alert("Erro ao copiar o valor do PIX!");
+    });
+  });
+
+  document.getElementById('retryButton').addEventListener('click', function() {
+    location.reload(); // Recarrega a página ao clicar no botão "Tentar Novamente"
+  });
+
+  requestAnimationFrame(loop);
 </script>
 </body>
 </html>
+
