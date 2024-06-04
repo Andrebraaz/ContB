@@ -53,7 +53,37 @@
         #drumset.drum-2 #drum-2 { background: #f008; }
         #drumset.drum-3 #drum-3 { background: #ff08; }
 
-        #points, #streak, #booster {
+        .note {
+            width: 10vmin;
+            height: 10vmin;
+            background: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            animation: fall 2s linear;
+        }
+
+        .note.blue { background: blue; }
+        .note.green { background: green; }
+        .note.red { background: red; }
+        .note.yellow { background: yellow; }
+
+        @keyframes fall {
+            0% { top: -10vmin; }
+            100% { top: 80vmin; }
+        }
+
+        .hit {
+            animation: hit 0.3s;
+        }
+
+        @keyframes hit {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        #points, #streak, #booster, #timer {
             position: absolute;
             top: 5vmin;
             right: 5vmin;
@@ -79,6 +109,14 @@
             content: "Streak: ";
         }
 
+        #timer {
+            top: 2vmin;
+            right: 50vw;
+            transform: translate(50%, 0);
+            text-align: center;
+            font-size: 8vmin;
+        }
+
         #video {
             position: absolute;
             top: 0;
@@ -96,6 +134,7 @@
     <div id="points"></div>
     <div id="streak"></div>
     <div id="booster"></div>
+    <div id="timer"></div>
 
     <div id="drumset">
         <div class="drum" id="drum-2"></div>
@@ -110,27 +149,68 @@
         let active = 0;
         let points = 0;
         let streak = 0;
+        const colors = ['blue', 'green', 'red', 'yellow'];
+        let timeRemaining = 219; // 3 minutes and 39 seconds
 
         function generateRandomActive() {
             active = Math.floor(Math.random() * 4);
-            document.querySelector("#drumset").className = `drum-${active}`;
-            document.querySelector("#points").textContent = points;
-            document.querySelector("#streak").textContent = streak;
+            createNote();
+        }
+
+        function createNote() {
+            const note = document.createElement('div');
+            note.classList.add('note', colors[active]);
+            note.dataset.index = active;
+            document.body.appendChild(note);
+
+            const drumRect = document.querySelector(`#drum-${active}`).getBoundingClientRect();
+            const noteWidth = note.offsetWidth;
+            const drumWidth = drumRect.width;
+            note.style.left = `${drumRect.left + (drumWidth - noteWidth) / 2}px`;
+
+            note.addEventListener('animationend', () => {
+                if (!note.clicked) {
+                    note.remove();
+                    streak = 0;
+                    document.querySelector("#streak").textContent = streak;
+                }
+            });
         }
 
         function buttonPressed(id) {
             let booster = 1;
             console.log(`Button ${id} pressed.`);
-            if (id === active) {
-                streak++;
-                booster = Math.min(streak, 5);
-                points += booster;
-                generateRandomActive();
-            } else {
+            const notes = document.querySelectorAll(`.note.${colors[id]}`);
+            let noteHit = false;
+            notes.forEach(note => {
+                const noteRect = note.getBoundingClientRect();
+                const drumRect = document.querySelector(`#drum-${id}`).getBoundingClientRect();
+                if (noteRect.top > drumRect.top && noteRect.bottom < drumRect.bottom) {
+                    note.remove();
+                    note.clicked = true;
+                    streak++;
+                    booster = Math.min(streak, 5);
+                    points += booster;
+                    noteHit = true;
+                    // Add hit effect
+                    note.classList.add('hit');
+                    setTimeout(() => {
+                        note.classList.remove('hit');
+                    }, 300);
+                }
+            });
+
+            if (!noteHit) {
                 streak = 0;
             }
+            
+            document.querySelector("#points").textContent = points;
             document.querySelector("#streak").textContent = streak;
             document.querySelector("#booster").textContent = `x${booster}`;
+            // Clear booster display after a delay
+            setTimeout(() => {
+                document.querySelector("#booster").textContent = '';
+            }, 1000);
         }
 
         function readValue() {
@@ -156,10 +236,28 @@
             }
         }
 
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.querySelector("#timer").textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            alert(`Time's up! Your score is ${points}.`);
+            document.querySelectorAll('.note').forEach(note => note.remove());
+            // Stop generating new notes
+            clearInterval(noteGenerationInterval);
+        }
+
         window.addEventListener("gamepadconnected", function(e) {
             console.log("Gamepad connected!");
             gamepads[e.gamepad.index] = true;
-            generateRandomActive();
             readValue();
         });
 
@@ -193,7 +291,9 @@
             });
         });
 
-        generateRandomActive();
+        updateTimer();
+        const noteGenerationInterval = setInterval(generateRandomActive, 2000); // Generates a new note every 2 seconds
     </script>
 </body>
 </html>
+
