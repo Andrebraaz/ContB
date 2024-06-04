@@ -2,9 +2,9 @@
 <html>
 <head>
 
-<h1>SNAKE PIX</h1>
-<p>Ao comer as maçãs o valor do PIX, diminui em R$200,00.</p>
-<p style="margin-top: -0.5em;">Boa Sorte, ou não...</p>
+<h1 style="font-size: 8vw;">SNAKE PIX</h1>
+<p style="font-size: 4vw;">Ao comer as maçãs o valor do PIX, diminui em R$200,00.</p>
+<p style="font-size: 3vw; margin-top: -0.5em;">Boa Sorte, ou não...</p>
 
 
   <title>SNAKE PIX</title>
@@ -26,8 +26,8 @@
     }
     canvas {
       border: 1px solid white;
-      width: 90vw; /* Ajuste para 80% da largura da tela */
-      height: 90vw; /* Ajuste para 80% da altura da tela */
+      width: 90vw; /* Ajuste para 60% da largura da tela */
+      height: 90vw; /* Ajuste para 60% da altura da tela */
     }
 
     #gameOverScreen {
@@ -44,34 +44,35 @@
       align-items: center;
     }
     #gameOverScreen img {
-      width: 150px;
-      height: 150px;
+      width: 10vw; /* Ajuste para 10% da largura da tela */
+      height: 10vw; /* Ajuste para 10% da altura da tela */
     }
     #pixValueGameOver {
-      margin-top: 20px;
+      margin-top: 1vw; /* Ajuste para 1% da altura da tela */
+      font-size: 3vw; /* Ajuste para 1.5% da largura da tela */
     }
   </style>
 </head>
 <body>
 <div id="gameOverScreen">
-  <div id="gameOverMessage" style="font-size: 24px;">Game Over</div>
+  <div id="gameOverMessage" style="font-size: 8vw;">Game Over</div>
 
   <br>
-  <button id="retryButton">Tentar Novamente</button>
+  <button id="retryButton" style="font-size: 3vw;">Tentar Novamente</button>
   <br>
   <img src="https://raw.githubusercontent.com/Andrebraaz/ContB/main/download.png" alt="Game Over" />
   <br>
   <div id="pixValueGameOver"></div>
   <br>
-  <button id="copyButton">Copiar valor do PIX3</button>
+  <button id="copyButton" style="font-size: 3vw;">Copiar valor do PIX3</button>
 
 </div>
 
 <canvas width="400" height="400" id="game"></canvas>
 <div id="pixValue"></div>
 
-<p>Com carinho,</p>
-<p style="margin-top: -0.5em;">Isabela & André</p>
+<p style="font-size: 3vw;">Com carinho,</p>
+<p style="font-size: 3vw; margin-top: -0.5em;">Isabela & André</p>
 
 <script>
   var canvas = document.getElementById('game');
@@ -197,7 +198,6 @@
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
       }
-
       for (var i = index + 1; i < snake.cells.length; i++) {
         if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
           snake.x = 160;
@@ -223,7 +223,7 @@
     });
 
     context.fillStyle = 'white';
-    context.font = '20px Arial';
+    context.font = '2vw Arial'; /* Ajuste o tamanho do texto em relação à largura da tela */
     var pixValue = 10000 - score * 200;
     context.fillText('Valor do pix4: ' + pixValue, 10, 25);
   }
