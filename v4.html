@@ -244,7 +244,7 @@
             </tbody>
         </table>
         <hr />
-        <h2 style="text-align: center;">CALCULADORA PARA RECOLHIMENTO DE INSS DE OBRA 2</h2>
+        <h2 style="text-align: center;">CALCULADORA PARA RECOLHIMENTO DE INSS DE OBRA</h2>
         <br>
         <table border="0">
             <tr>
@@ -727,7 +727,7 @@
                     // Atualiza o Custo da Obra por Destinação na página
          document.getElementById('totalARecolherValue').textContent = totalARecolher.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         console.log("totalARecolher:", totalARecolher); // Log da remuneração devida
-        document.getElementById('custoObra').textContent = 'Custo Total da Obra: ' + custoObra.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        document.getElementById('custoObra').textContent = 'Custo Total da Obra: '  + 'R$ '+ custoObra.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
                     // Atualiza o Fator Social na página
                     //document.getElementById('fatorSocial').textContent = 'Fator Social: ' + (fatorSocial ? fatorSocial.toFixed(2) : "Não aplicável");
                     // Atualiza a alíquota do Valor NF Pré-Moldado ou de Pré-Fabricado na página
