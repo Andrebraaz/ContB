@@ -5,7 +5,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta de Serviços - CONTBRAZ</title>
+    <title>INSS OBRAS - CONTBRAZ</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -132,7 +132,7 @@
     font-size: 1em;
     border: none;
     border-radius: 10px;
-    background-color: #f0f0f0;
+    background-color: #D6EEEE;
     color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
@@ -176,7 +176,7 @@
     font-size: 0.9em;
     border: none;
     border-radius: 10px;
-    background-color: #f0f0f0; /* Cor de fundo semelhante ao exemplo */
+    background-color: #D6EEEE; /* Cor de fundo semelhante ao exemplo */
     color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
@@ -194,7 +194,7 @@
     font-size: 1em;
     border: none;
     border-radius: 10px;
-    background-color: #f0f0f0; /* Cor de fundo semelhante ao exemplo */
+    background-color: #D6EEEE; /* Cor de fundo semelhante ao exemplo */
     color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
@@ -229,7 +229,8 @@
 
 <body>
     <div class="container">
-        <table style="width: 100%; border-collapse: collapse; float: left; margin: 0; padding: 0;" border="0">
+ 
+        <table style="width: 100%; border-collapse: collapse; float: left; margin: 0; padding: 0;border-bottom: 1px solid #BFFDFF;">
             <tbody>
                 <tr>
                     <td style="width: 50%; text-align: center; padding: 0; border-left: none;">
@@ -243,153 +244,277 @@
                 </tr>
             </tbody>
         </table>
-        <hr />
-        <h2 style="text-align: center;">CALCULADORA PARA RECOLHIMENTO DE INSS DE OBRA</h2>
-        <br>
-        <table border="0">
-            <tr>
+
+<table style="width: 100%; border-collapse: collapse; float: middle; margin: 0; padding: 0;">
+  <tr>
+    <td style="padding-top: 5px; padding-bottom: 5px;">
+      <h2 style="text-align: center;">CALCULADORA PARA RECOLHIMENTO DE INSS DE OBRA</h2>
+    </td>
+  </tr>
+</table>
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF; border-top: 1px solid #BFFDFF;">
+ 
+
+           <tr>
                 <td colspan="4"><strong>Área Total</strong></td>
             </tr>
+
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+
+
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">
+            <li style="width: 300px; list-style: none;">Área TOTAL com complementares</li> 
+            <div class="inputs" style="margin-left: 10px; display: inline-flex; align-items: center;">
+                <input type="number" id="areaTotal" value="120" oninput="calcular();" style="height: 5px; width: 50px; margin-left: 80px;">
+                <span style="margin-left: 5px;">m²</span>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
             <tr>
-                <td colspan="1" class="amarelo">
-                    <li>Área TOTAL com complementares</li>
-                </td>
-                <td class="amarelo">
-                    <div class="inputs">
-                        <input type="number" id="areaTotal" value="120" oninput="calcular(); calcular();" style="height: 3px;width: 100px;">
-                    </div>
-                </td>
-                <td colspan="2">m2</td>
+                <td colspan="4"><strong>Área complementares*</strong></td>
             </tr>
-            <tr>
-                <td colspan="4"><strong>Área complementares</strong></td>
-            </tr>
-            <tr>
-                <td class="amarelo">
-                    <li>Quadra esportiva ou poliesportiva:</li>
-                </td>
-                <td class="amarelo">
-                    <div class="inputs">
-                        <input type="number" id="quadra" value="0" oninput="calcular(); calcular();" style="height: 3px;width: 100px;">
-                    </div>
-                </td>
-                <td style="width: 20%;">m2</td>
-                <td class="azul">
-                    <select id="quadraCobertura" onchange="calcular(); calcular(); " style="width: 90px;">
-                        <option value="Descoberto">Descoberto</option>
-                        <option value="Coberto">Coberto</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="amarelo">
-                    <li>Piscina:</li>
-                </td>
-                <td class="amarelo">
-                    <div class="inputs">
-                        <input type="number" id="piscina" value="0" oninput="calcular(); calcular();" style="height: 3px; width: 100px;">
-                    </div>
-                </td>
-                <td>m2</td>
-                <td class="azul">
-                    <select id="piscinaCobertura" onchange="calcular(); calcular();">
-                        <option value="Descoberto">Descoberto</option>
-                        <option value="Coberto">Coberto</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="amarelo">
-                    <li>Garagem ou estacionamento térreos:</li>
-                </td>
-                <td class="amarelo">
-                    <div class="inputs">
-                        <input type="number" id="garagem" value="0" oninput="calcular(); calcular();" style="height: 3px;width: 100px;">
-                    </div>
-                </td>
-                <td>m2</td>
-                <td class="azul">
-                    <select id="garagemCobertura" onchange="calcular(); calcular();">
-                        <option value="Descoberto">Descoberto</option>
-                        <option value="Coberto">Coberto</option>
-                    </select>
-                </td>
-            </tr>
+</table>
+
+
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Quadra esportiva:</li>
+            <div class="inputs" style="margin-left: 10px; display: inline-flex; align-items: center;">
+                <input type="number" id="quadra" value="0" oninput="calcular();" style="height: 5px; width: 50px; margin-left: 80px;">
+                <span style="margin-left: 5px;">m²</span>
+            </div>
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="quadraCobertura" onchange="calcular();" style="width: 95px; max-width: 90px; margin-left: 10px;">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Piscina:</li>
+            <div class="inputs" style="margin-left: 10px; display: inline-flex; align-items: center;">
+                <input type="number" id="piscina" value="0" oninput="calcular();" style="height: 5px; width: 50px; margin-left: 80px;">
+                <span style="margin-left: 5px;">m²</span>
+            </div>
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="piscinaCobertura" onchange="calcular();" style="width: 95px; max-width: 90px; margin-left: 10px;">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+ 
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Garagem térrea:</li>
+            <div class="inputs" style="margin-left: 10px; display: inline-flex; align-items: center;">
+                <input type="number" id="garagem" value="0" oninput="calcular();" style="height: 5px; width: 50px; margin-left: 80px;">
+                <span style="margin-left: 5px;">m²</span>
+            </div>
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="garagemCobertura" onchange="calcular();" style="width: 95px; max-width: 90px; margin-left: 10px;">
+                    <option value="Descoberto">Descoberto</option>
+                    <option value="Coberto">Coberto</option>
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+ 
+
             <tr>
                 <td colspan="4"><strong>Categorização</strong></td>
             </tr>
-            <tr>
-                <td>
-                    <li>Destinação:</li>
-                </td>
-                <td colspan="3" class="azul">
-                    <select id="destinacao" class="inputs" onchange="calcular(); calcular();" style="height: 25px;width: 160px;">
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Destinação:</li>
+
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="destinacao" onchange="calcular();" style="width: 205px; max-width: 205px; margin-left: 90px;">
                         <option value="Residencial Unifamiliar">Residencial Unifamiliar</option>
                         <option value="Residencial Multifamiliar">Residencial Multifamiliar</option>
                         <option value="Comercial salas e lojas">Comercial salas e lojas</option>
                         <option value="Galpao industrial">Galpão industrial</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <li>Percentual de Tipo de Obra:</li>
-                </td>
-                <td colspan="3" class="azul">
-                    <select id="tipoObra" onchange="calcular(); calcular();" style="height: 25px;width: 160px;">
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+ 
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Percentual de Tipo de Obra:</li>
+
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="tipoObra" onchange="calcular();" style="width: 205px; max-width: 205px; margin-left: 90px;">
                         <option value="Alvenaria">Alvenaria</option>
                         <option value="Madeira">Madeira</option>
                         <option value="Mista">Mista</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <li>Categoria:</li>
-                </td>
-                <td colspan="3" class="azul">
-                    <select id="categoria" onchange="calcular(); calcular();" style="height: 25px;width: 160px;">
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Categoria:</li>
+
+            <div class="azul" style="display: inline-flex; align-items: center;">
+                <select id="categoria" onchange="calcular();" style="width: 205px; max-width: 205px; margin-left: 90px;">
                         <option value="Obra Nova">Obra Nova</option>
                         <option value="Acrescimo">Acrescimo</option>
                         <option value="Reforma">Reforma</option>
                         <option value="Demolicao">Demolicao</option>
-                    </select>
-                </td>
-            </tr>
+                </select>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+ 
             <tr>
                 <td colspan="4"><strong>Data</strong></td>
             </tr>
-            <tr>
-                <td>
-                    <li>Início da Obra:</li>
-                </td>
-                <td colspan="3" class="azul">
-                    <input type="date" id="inicioObra" style="width: 100px;">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <li>Fim da Obra:</li>
-                </td>
-                <td colspan="3" class="azul">
-                    <input type="date" id="fimObra" style="width: 100px;">
-                </td>
-            </tr>
+</table>
+
+
+
+
+
+
+
+
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Início da Obra:</li>
+
+
+            <div class="azul" style="margin-left: 90px; display: inline-flex; align-items: center;">
+                <input type="date" id="inicioObra" oninput="calcular();" style="height: 15px; width: 195px;">
+ 
+ 
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+ 
+ <table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">Fim da Obra:</li>
+
+
+            <div class="azul" style="margin-left: 90px; display: inline-flex; align-items: center;">
+                <input type="date" id="fimObra" oninput="calcular();" style="height: 15px; width: 195px;">
+ 
+ 
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+ 
             <tr>
                 <td colspan="4"><strong>Deduções</strong></td>
             </tr>
-            <tr>
-                <td class="amarelo">
-                    <li>Valor NF Pré-Moldado ou de Pré-Fabricado:</li>
-                </td>
-                <td class="amarelo">
-                    <div class="inputs">
-                        <input type="number" id="valorNF" value="0" oninput="calcular(); calcular();" style="height: 3px;width: 100px;">
-                    </div>
-                </td>
-                <td colspan="3">R$</td>
-            </tr>
-        </table>
+</table>
+
+
+
+
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td class="amarelo" colspan="3" style="display: flex; flex-wrap: wrap; align-items: center; padding-top: 1px; padding-bottom: 1px;">            <li style="width: 300px; list-style: none;">• Valor NF Pré-Moldado/Fabricado:</li>
+            <div class="inputs" style="margin-left: 10px; display: inline-flex; align-items: center;">
+                <input type="number" id="valorNF" value="0" oninput="calcular();" style="height: 5px; width: 150px; margin-left: 80px;">
+                <span style="margin-left: 1px;">R$</span>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
         <p id="resultado"></p>
         <p id="valorVAU"></p>
         <p id="fatorSocial"></p>
@@ -399,30 +524,89 @@
         <p id="percentualCategoria"></p>
         <p id="remuneracaoDevida"></p>
         <p>
-            <li>Houve remuneração por uso de concreto usinado, massa asfáltica ou argamassa usinada?</li>
-        </p>
-        <label>
-            <input type="radio" name="remuneracaoUsinado" value="sim" onchange="calcular(); calcular();"> Sim</label>
-        <label>
-            <input type="radio" name="remuneracaoUsinado" value="nao" onchange="calcular(); calcular();" checked> Não</label>
-        <p>
-            <li> Valor NF para desconto Pré moldado: Solicitar ContBraz </li>
-        </p>
-        <p>
-            <li> Valor NF para desconto MEI: Solicitar ContBraz </li>
-        </p>
-        <p id="decadenciaTotal"></p>
-        <p id="percentualUsinado"></p>
-        <p id="percentualAplicacao"></p>
-        <p id="percentualAjuste"></p>
-        <p id="remuneracaoUsinado"></p>
-        <p id="remuneracaoAposAbatimento"></p>
-        <p><strong>Custo da Obra</strong></p>
-        <p id="custoObra"></p>
-        <hr />
-        <table style="width: 350px; height: 100%; border-collapse: collapse; float: left; margin: 0;  margin-top: 0;margin-bottom: 0;padding: 0;" border="0">
+
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+ 
+
+
+
+<td style="white-space: wrap; padding-top: 4px; padding-bottom: 4px;">
+ • Houve uso de concreto usinado, massa asfáltica ou argamassa usinada?
+    <div style="display: inline-block;">
+        <label style="display: inline-block;"><input type="radio" name="remuneracaoUsinado" value="sim" onchange="calcular(); calcular();"> Sim</label>
+        <label style="display: inline-block;"><input type="radio" name="remuneracaoUsinado" value="nao" onchange="calcular(); calcular();" checked> Não</label>
+    </div>
+</td>
+
+
+
+
+
+    </tr>
+</table>
+
+
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+<td style="white-space: wrap; padding-top: 4px; padding-bottom: 4px;">
+• Valor NF para desconto Pré moldado: Solicitar ContBraz
+ 
+</td>
+    </tr>
+</table>
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+<td style="white-space: wrap; padding-top: 4px; padding-bottom: 4px;">
+• Valor NF para desconto MEI: Solicitar ContBraz 
+ 
+</td>
+    </tr>
+</table>
+ 
+
+
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+        <td>
+<strong>Custo da Obra</strong>
+ 
+</td>
+    </tr>
+</table>
+ 
+
+
+<table style="width: 100%; border-collapse: collapse; margin: 0; padding: 0; border-bottom: 1px solid #BFFDFF;">
+    <tr>
+<td style="white-space: wrap; padding-top: 4px; padding-bottom: 4px;">
+    Custo Total da Obra:
+    <strong><p id="custoObra" style="display: inline;"></p></strong>
+</td>
+
+    </tr>
+</table>
+
+
+
+
+
+
+        <table style="width: 340px; height: 100%; border-collapse: collapse; float: left; margin: 0;  margin-top: 0;margin-bottom: 0;padding: 0;" border="0">
             <caption>
-                <h3>Tabela de Cálculo Guia de Contribuições</h3></caption>
+                <h3>Cálculo Guia de Contribuições</h3></caption>
             <thead>
                 <tr>
                     <th>Contribuições</th>
@@ -437,33 +621,40 @@
                 <tr>
                     <td colspan="2" style="padding: 0; margin: 1px;">
                         <h4 style="margin: 1px;">Total a pagar INSS obra:</h4></td>
-                    <td id="totalDebito" style="color: red; padding: 0; margin: 1px;"></td>
+                    <td id="totalDebito" style="color: red; padding: 0; margin: 1px;font-weight: bold;"></td>
                 </tr>
                 <tr>
                     <td colspan="2" style="padding: 0; margin: 1px;">
                         <h4 style="margin: 1px;">Total com auxilio ContBraz:</h4></td>
-                    <td style="color: #23d400; padding: 0; margin: 1px;">R$ <span id="totalARecolherValue" style="color: #23d400;"></span></td>
+<td style="color: #23d400; padding: 0; margin: 1px; font-weight: bold;">R$ <span id="totalARecolherValue" style="color: #23d400;"></span></td>
+
                 </tr>
                 <tr>
                     <td colspan="2">Percentual Reduzido:</td>
-                    <td style="color: #23d400;"><span id="percentualValue"></span>%</td>
+                    <td style="color: #23d400; font-weight: bold;"><span id="percentualValue"></span>%</td>
                 </tr>
             </tfoot>
         </table>
         <div style="margin: 0; display: inline-block; vertical-align: middle; font-weight: normal;">
-            <div id="myPlot" style="width: 300px; height: 300px;"></div>
+            <div id="myPlot" style="width: 300px; height: 300px; float: right;"></div>
             <p>
                 <h4><span id="totalARecolher" style="color: #23d400;"></span></h4></p>
             <p> <span id="fatorAjuste"></span></p>
             <p> <span id="valorMaoObraNecessario"></span></p>
-        </div>
+      
+ 
+
+   </div>
+
+
+
         <hr />
         <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
             <div style="flex: 1;">
                 <img src="https://raw.githubusercontent.com/Andrebraaz/ContB/main/s.png" width="80" height="80">
             </div>
             <div style="flex: 2; text-align: center;">
-                <h5>Desde 1996, Auxiliando você que busca soluções.</h5>
+                <h5>Desde 1996, Auxiliando você que busca soluções. Valores simulados, PR-Abril, *Conforme legislação</h5>
                 <h5><a href="https://linktr.ee/contbraz">linktr.ee/ContBraz</a></h5>
             </div>
             <div style="flex: 1;">
@@ -595,7 +786,7 @@
          var totalDebitoValue = parseFloat(document.getElementById('totalDebito').textContent.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
             // Dados para o gráfico de barras verticais
             const data1 = [{
-                x: ['Com auxilio ContBraz', 'Valor total a pagar'],
+                x: ['Auxílio ContBraz', 'Total a pagar'],
                 y: [totalARecolherValue, totalDebitoValue],
                 type: 'bar',
                 marker: {
@@ -611,6 +802,7 @@
                 yaxis: {
                     title: 'R$'
                 }
+
             };
             // Atualiza o gráfico
             Plotly.newPlot('myPlot', data1, layout1);
@@ -727,7 +919,7 @@
                     // Atualiza o Custo da Obra por Destinação na página
          document.getElementById('totalARecolherValue').textContent = totalARecolher.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         console.log("totalARecolher:", totalARecolher); // Log da remuneração devida
-        document.getElementById('custoObra').textContent = 'Custo Total da Obra: '  + 'R$ '+ custoObra.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        document.getElementById('custoObra').textContent = 'R$ '+ custoObra.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
                     // Atualiza o Fator Social na página
                     //document.getElementById('fatorSocial').textContent = 'Fator Social: ' + (fatorSocial ? fatorSocial.toFixed(2) : "Não aplicável");
                     // Atualiza a alíquota do Valor NF Pré-Moldado ou de Pré-Fabricado na página
