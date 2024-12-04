@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status do Servidor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .status {
+      margin-top: 20%;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .online {
+      color: green;
+    }
+    .offline {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="server-status" class="status">Verificando...</div>
+
+  <script>
+    async function checkServer() {
+      const url = "sip.syma.com.br";
+      const statusDiv = document.getElementById("server-status");
+
+      try {
+        const response = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
+        statusDiv.textContent = "O servidor está ONLINE.";
+        statusDiv.className = "status online";
+      } catch (error) {
+        statusDiv.textContent = "O servidor está OFFLINE.";
+        statusDiv.className = "status offline";
+      }
+    }
+
+    checkServer();
+  </script>
+</body>
+</html>
