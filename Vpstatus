@@ -36,10 +36,10 @@
 
       try {
         const response = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
-        statusDiv.textContent = "O servidor está ONLINE.";
+        statusDiv.textContent = "Telefone está ONLINE.";
         statusDiv.className = "status online";
       } catch (error) {
-        statusDiv.textContent = "O servidor está OFFLINE.";
+        statusDiv.textContent = "Telefone está OFFLINE.";
         statusDiv.className = "status offline";
       }
     }
