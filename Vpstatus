@@ -31,12 +31,15 @@
 
   <script>
     async function checkServer() {
-      const url = "sip.syma.com.br";
       const statusDiv = document.getElementById("server-status");
+      const startTime = Date.now();
 
       try {
-        const response = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
-        statusDiv.textContent = "Telefone está ONLINE.";
+        // Simula um "ping" enviando uma requisição GET para o servidor
+        await fetch("https://sip.syma.com.br", { method: "GET", mode: "no-cors" });
+        const latency = Date.now() - startTime;
+
+        statusDiv.textContent = `Telefone está ONLINE. Latência: ${latency} ms`;
         statusDiv.className = "status online";
       } catch (error) {
         statusDiv.textContent = "Telefone está OFFLINE.";
