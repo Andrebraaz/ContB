@@ -36,10 +36,10 @@
 
       try {
         // Simula um "ping" enviando uma requisição GET para o servidor
-        await fetch("https://sip.syma.com.br", { method: "GET", mode: "no-cors" });
+        await fetch("sip.syma.com.br", { method: "GET", mode: "no-cors" });
         const latency = Date.now() - startTime;
 
-        statusDiv.textContent = `Telefone está ONLINE. Latência: ${latency} ms`;
+        statusDiv.textContent = "Telefone está ONLINE.";
         statusDiv.className = "status online";
       } catch (error) {
         statusDiv.textContent = "Telefone está OFFLINE.";
