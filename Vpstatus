@@ -32,17 +32,25 @@
   <script>
     async function checkServer() {
       const statusDiv = document.getElementById("server-status");
-      const startTime = Date.now();
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1000); // Timeout de 5 segundos
 
       try {
-        // Simula um "ping" enviando uma requisição GET para o servidor
-        await fetch("sip.syma.com.br", { method: "GET", mode: "no-cors" });
-        const latency = Date.now() - startTime;
+        // Faz a requisição e espera resposta
+        await fetch("https://sip.syma.com.br", { method: "HEAD", signal: controller.signal });
+        clearTimeout(timeoutId);
 
         statusDiv.textContent = "Telefone está ONLINE.";
         statusDiv.className = "status online";
       } catch (error) {
-        statusDiv.textContent = "Telefone está OFFLINE.";
+        clearTimeout(timeoutId);
+
+        // Tratamento de timeout ou outros erros
+        if (error.name === "AbortError") {
+          statusDiv.textContent = "Telefone está OFFLINE (Timeout).";
+        } else {
+          statusDiv.textContent = "Telefone está OFFLINE.";
+        }
         statusDiv.className = "status offline";
       }
     }
