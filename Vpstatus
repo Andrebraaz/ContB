@@ -37,7 +37,7 @@
 
       try {
         // Faz a requisição e espera resposta
-        await fetch("https://sip.syma.com.br", { method: "HEAD", signal: controller.signal });
+        await fetch("sip.syma.com.br", { method: "HEAD", signal: controller.signal });
         clearTimeout(timeoutId);
 
         statusDiv.textContent = "Telefone está ONLINE.";
